@@ -138,7 +138,6 @@ export class NotebookOverlay {
     show() {
         if (this.overlay) this.overlay.remove();
 
-        // Trigger the visual flair sound!
         this.playPaperSound();
 
         this.overlay = document.createElement('div');
@@ -147,12 +146,24 @@ export class NotebookOverlay {
         let gridHTML = '';
         const uniqueGames = [];
 
+        // Fetch max page AND max panel
+        const maxUnlockedPage = this.stateManager.currentState.maxPageIndex || 0;
+        const maxUnlockedPanel = this.stateManager.currentState.maxPanelIndex || 0;
+
         this.gameManifest.forEach(gameDef => {
+            // --- STRICT SPOILER FILTER ---
+            if (gameDef.pageIndex === undefined) return; 
+            
+            // Skip if it's on a future page
+            if (gameDef.pageIndex > maxUnlockedPage) return; 
+            
+            // Skip if it's on the furthest reached page, but on a future panel
+            if (gameDef.pageIndex === maxUnlockedPage && gameDef.panelIndex > maxUnlockedPanel) return; 
+
             const tasks = gameDef.sequence || [{ moduleId: gameDef.game_module_id, levelId: gameDef.level_id }];
             
             tasks.forEach(task => {
                 if (!task.moduleId) return; 
-                // --- FIX A: Exclude the endless runner from the notebook ---
                 if (task.moduleId === 'snowy_runner') return; 
                 
                 const isDuplicate = uniqueGames.some(g => g.moduleId === task.moduleId && g.levelId === task.levelId);
@@ -162,22 +173,33 @@ export class NotebookOverlay {
             });
         });
 
-        uniqueGames.forEach(game => {
-            const moduleId = game.moduleId;
-            const levelId = game.levelId;
-            const title = this.formatTitle(moduleId);
-            
-            const isComplete = this.stateManager.isGameComplete(moduleId, levelId);
-            const stampClass = isComplete ? 'stamp-solved' : 'stamp-todo';
-            const stampText = isComplete ? 'SOLVED' : 'TO DO';
-
-            gridHTML += `
-                <div class="notebook-entry" data-module="${moduleId}" data-level="${levelId}">
-                    <div class="entry-title">${title}</div>
-                    <div class="entry-stamp ${stampClass}">${stampText}</div>
+        // --- EMPTY STATE OR GRID GENERATION ---
+        if (uniqueGames.length === 0) {
+            gridHTML = `
+                <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #8D6E63; font-family: 'Comic Sans MS', fantasy, sans-serif;">
+                    <div style="font-size: 54px; margin-bottom: 15px; opacity: 0.7;">🔍</div>
+                    <div style="font-size: 24px; font-weight: bold; margin-bottom: 10px; color: #3E2723;">Your notes are empty!</div>
+                    <div style="font-size: 16px; line-height: 1.5; max-width: 80%; margin: 0 auto;">Keep reading the story to uncover mysteries, solve puzzles, and fill up your field guide.</div>
                 </div>
             `;
-        });
+        } else {
+            uniqueGames.forEach(game => {
+                const moduleId = game.moduleId;
+                const levelId = game.levelId;
+                const title = this.formatTitle(moduleId);
+                
+                const isComplete = this.stateManager.isGameComplete(moduleId, levelId);
+                const stampClass = isComplete ? 'stamp-solved' : 'stamp-todo';
+                const stampText = isComplete ? 'SOLVED' : 'TO DO';
+
+                gridHTML += `
+                    <div class="notebook-entry" data-module="${moduleId}" data-level="${levelId}">
+                        <div class="entry-title">${title}</div>
+                        <div class="entry-stamp ${stampClass}">${stampText}</div>
+                    </div>
+                `;
+            });
+        }
 
         this.overlay.innerHTML = `
             <div class="notebook-container">

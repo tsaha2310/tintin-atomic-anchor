@@ -348,7 +348,7 @@ class App {
             this.config.gameManifest.forEach(entry => gameMap.set(entry.trigger_panel_id, entry));
         }
 
-        this.runtimeManifest.pages.forEach((page) => {
+        this.runtimeManifest.pages.forEach((page, pageIndex) => {
             if (!page.panels && page.frames) page.panels = page.frames;
 
             page.panels.forEach((panel, index) => {
@@ -360,6 +360,10 @@ class App {
                 // INJECT GAME LOGIC
                 if (gameMap.has(panel.id)) {
                     const gameDef = gameMap.get(panel.id);
+
+                    // --- Stamp BOTH page and panel index onto the game definition ---
+                    gameDef.pageIndex = pageIndex;
+                    gameDef.panelIndex = index;
                     
                     // --- NORMALIZATION STEP ---
                     // Convert old "single game" format to new "Sequence Array" format

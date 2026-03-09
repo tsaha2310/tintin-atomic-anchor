@@ -19,22 +19,40 @@ export class StateManager {
         const raw = localStorage.getItem(this.STORAGE_KEY);
         if (raw) {
             try {
-                return JSON.parse(raw);
+                const data = JSON.parse(raw);
+                if (data.maxPageIndex === undefined) {
+                    data.maxPageIndex = data.pageIndex || 0;
+                    data.maxPanelIndex = data.panelIndex || 0;
+                }
+                return data;
             } catch (e) {
                 console.warn("Corrupt save file. Resetting.");
             }
         }
-        // Default "Fresh Save" State
         return {
             pageIndex: 0,
             panelIndex: 0,
-            completedGames: {} // Map of 'moduleId_levelId' -> true
+            maxPageIndex: 0,
+            maxPanelIndex: 0,
+            completedGames: {} 
         };
     }
 
     saveProgress(pageIndex, panelIndex) {
         this.currentState.pageIndex = pageIndex;
         this.currentState.panelIndex = panelIndex;
+        
+        // Update max progress if we've read further than before
+        if (this.currentState.maxPageIndex === undefined || pageIndex > this.currentState.maxPageIndex) {
+            this.currentState.maxPageIndex = pageIndex;
+            this.currentState.maxPanelIndex = panelIndex;
+        } else if (pageIndex === this.currentState.maxPageIndex) {
+            // If on the max page, check if we've moved to a further panel
+            if (this.currentState.maxPanelIndex === undefined || panelIndex > this.currentState.maxPanelIndex) {
+                this.currentState.maxPanelIndex = panelIndex;
+            }
+        }
+        
         this._commit();
     }
 

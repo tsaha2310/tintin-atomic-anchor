@@ -1,0 +1,165 @@
+{
+    "common": {
+        "bubble_tail": { "src": "assets/ui/bubble_tail.png", "w": 20, "h": 20 },
+        "btn_close":   { "src": "assets/ui/btn_close.png", "w": 32, "h": 32 },
+        "ui_slider_track": { "src": "assets/ui/slider_track_frame.png", "w": 80, "h": 450 },
+        "ui_slider_thumb": { "src": "assets/ui/slider_thumb_metal.png", "w": 64, "h": 64 },
+
+        "snowy_correct": { "src": "assets/ui/snowy_correct.png", "w": 200, "h": 280 },
+        "snowy_incorrect": { "src": "assets/ui/snowy_incorrect.png", "w": 200, "h": 280 },
+
+        "portrait_tintin": { "src": "assets/ui/portrait_tintin.png", "w": 240, "h": 240 },
+        "portrait_haddock": { "src": "assets/ui/portrait_haddock.png", "w": 240, "h": 240 },
+        "portrait_calculus": { "src": "assets/ui/portrait_calculus.png", "w": 240, "h": 240 },
+        "portrait_thomson": { "src": "assets/ui/portrait_thomson.png", "w": 240, "h": 240 },
+        "portrait_castafiore": { "src": "assets/ui/portrait_castafiore.png", "w": 240, "h": 240 },
+
+        "lab_bg_looping": {"src": "assets/shared/lab_bg_looping.jpg", "w":1536, "h":1024}
+    },
+    "game_01": {
+        "ui_icon_hand":           { "src": "assets/vol_1/game_01/icon_hand.png", "w": 256, "h": 256 },
+        "ui_icon_hand_closed":    { "src": "assets/vol_1/game_01/icon_hand_closed.png", "w": 256, "h": 256 },
+        "ui_icon_hand_back":      { "src": "assets/vol_1/game_01/icon_hand_back.png", "w": 256, "h": 256 },
+        "ui_icon_hand_fingers":   { "src": "assets/vol_1/game_01/icon_hand_fingers.png", "w": 256, "h": 256 },
+        "ui_icon_magnet":         { "src": "assets/vol_1/game_01/icon_magnet.png", "w": 256, "h": 256 },
+        "g01_bg_wood_crate":      { "src": "assets/vol_1/game_01/crate_bg.jpg", "w": 1024, "h": 768 },
+        "g01_streak_plate":       { "src": "assets/vol_1/game_01/streak_plate.png", "w": 440, "h": 240 },
+        "g01_junk_bolt":          { "src": "assets/vol_1/game_01/junk_bolt.png", "w": 220, "h": 128 },
+        "g01_junk_gear":          { "src": "assets/vol_1/game_01/junk_gear.png", "w": 175, "h": 128 },
+        "g01_junk_tin_can":       { "src": "assets/vol_1/game_01/junk_tin_can.png", "w": 128, "h": 180 },
+        "g01_junk_glass_shard":   { "src": "assets/vol_1/game_01/junk_glass.png", "w": 90, "h": 128 },
+        "g01_junk_ceramic_piece": { "src": "assets/vol_1/game_01/junk_ceramic.png", "w": 128, "h": 128 },
+        "g01_item_zlatanium":     { "src": "assets/vol_1/game_01/rock_zlatanium.png", "w": 64, "h": 64 },
+        "g01_item_pyrite":        { "src": "assets/vol_1/game_01/rock_pyrite.png", "w": 64, "h": 64 },
+        "g01_item_gold":          { "src": "assets/vol_1/game_01/rock_gold.png", "w": 64, "h": 64 }
+    },
+    "game_02": {
+        "g02_bg_desk":        { "src": "assets/vol_1/game_02/desk.jpg", "w": 1024, "h": 768 },
+        "g02_rock_normal":    { "src": "assets/vol_1/game_02/rock_yellow.png", "w": 128, "h": 128 },
+        "g02_rock_flat":      { "src": "assets/vol_1/game_02/rock_flat.png", "w": 160, "h": 80 },
+        "g02_rock_shattered": { "src": "assets/vol_1/game_02/rock_broken.png", "w": 128, "h": 128 },
+        "ui_icon_plate":      { "src": "assets/vol_1/game_02/streak_tile.png", "w": 64, "h": 64 },
+        "ui_icon_hammer":     { "src": "assets/vol_1/game_02/hammer.png", "w": 64, "h": 64 },
+        "ui_icon_lens":       { "src": "assets/vol_1/game_02/magnifying_glass.svg", "w": 200, "h": 200 },
+        "ui_journal_bg":      { "src": "assets/vol_1/game_04/notebook_open.png", "w": 1000, "h": 1200 }
+    },
+    "game_03_packing": {
+        "g03_sprite_haddock": { "src": "assets/vol_1/game_03_packing/haddock_sheet.png", "w": 512, "h": 512 },
+        "g03_sprite_calculus": { "src": "assets/vol_1/game_03_packing/calculus_sheet.png", "w": 512, "h": 512 },
+        "g03_sprite_snowy":    { "src": "assets/vol_1/game_03_packing/snowy_sheet.png", "w": 512, "h": 512 },
+        "g03_bg_hallway": { "src": "assets/vol_1/game_03_packing/hallway.jpg", "w": 1024, "h": 768 },
+        "g03_bg_crate_inner": { "src": "assets/vol_1/game_03_packing/crate_cutaway.png", "w": 300, "h": 300 },
+        "g03_item_rock": { "src": "assets/vol_1/game_03_packing/rock.png", "w": 64, "h": 64 },
+        "g03_item_coat": { "src": "assets/vol_1/game_03_packing/coat.png", "w": 64, "h": 64 },
+        "g03_item_coat_empty": { "src": "assets/vol_1/game_03_packing/coat_flat.png", "w": 64, "h": 64 },
+        "g03_item_statue": { "src": "assets/vol_1/game_03_packing/bust.png", "w": 64, "h": 64 },
+        "g03_item_sponges": { "src": "assets/vol_1/game_03_packing/sponges.png", "w": 64, "h": 64 },
+        "g03_item_books": { "src": "assets/vol_1/game_03_packing/books.png", "w": 64, "h": 64 },
+        "g03_item_boots": { "src": "assets/vol_1/game_03_packing/boots.png", "w": 64, "h": 64 },
+        "g03_item_peanuts": { "src": "assets/vol_1/game_03_packing/peanuts.png", "w": 64, "h": 64 }
+    },
+    "game_04_pressure": {
+        "g04_bg_pantry":       { "src": "assets/vol_1/game_04/pantry_bg.jpg", "w": 1536, "h": 1024 },
+        "g04_item_board":      { "src": "assets/vol_1/game_04/item_board.png", "w": 320, "h": 80 },
+        "g04_item_ball":       { "src": "assets/vol_1/game_04/item_ball.png", "w": 160, "h": 160 },
+        "g04_item_rock":       { "src": "assets/vol_1/game_04/item_rock_sharp.png", "w": 120, "h": 200 },
+        "g04_bag_front":       { "src": "assets/vol_1/game_04/bag_front.png", "w": 300, "h": 150 },
+        "g04_bag_back":        { "src": "assets/vol_1/game_04/bag_back.png", "w": 300, "h": 150 },
+        "g04_bag_ripped_left": { "src": "assets/vol_1/game_04/bag_ripped_left.png", "w": 150, "h": 150 },
+        "g04_bag_ripped_right":{ "src": "assets/vol_1/game_04/bag_ripped_right.png", "w": 150, "h": 150 },
+        "g04_ui_gauge":        { "src": "assets/vol_1/game_04/ui_gauge.png", "w": 100, "h": 200 },
+        "ui_police_notebook":  { "src": "assets/vol_1/game_04/notebook_open.png", "w": 1000, "h": 1200 }
+    },
+    "game_05_castafiore_quiz": {
+        "g05_bg_pot_inside": { "src": "assets/vol_1/game_05_quiz/bg_pot_inside.jpg", "w": 1024, "h": 768 },
+        "g05_bg_teacup":     { "src": "assets/vol_1/game_05_quiz/bg_teacup.jpg", "w": 1024, "h": 768 },
+        "g05_bg_diagram":    { "src": "assets/vol_1/game_05_quiz/bg_diagram_paper.jpg", "w": 1024, "h": 768 },
+        "ui_slotted_spoon":  { "src": "assets/vol_1/game_05_quiz/ui_slotted_spoon.png", "w": 180, "h": 180 },
+        "g05_atom_silver":   { "src": "assets/vol_1/game_05_quiz/atom_person_silver.png", "w": 128, "h": 128 },
+        "g05_atom_sugar":    { "src": "assets/vol_1/game_05_quiz/atom_person_sugar.png", "w": 128, "h": 128 },
+        "g05_atom_water":    { "src": "assets/vol_1/game_05_quiz/atom_person_water.png", "w": 128, "h": 128 }
+    },
+    "game_06_thermal": {
+        "g06_bg_stove": { "src": "assets/vol_1/game_06/stove_bg.jpg", "w": 1024, "h": 768 },
+        "g06_pot_copper": { "src": "assets/vol_1/game_06/pot_copper.png", "w": 400, "h": 400 },
+        "g06_pot_overlay_cracks": { "src": "assets/vol_1/game_06/pot_cracks.png", "w": 400, "h": 400 },
+        
+        "g06_zlatanium_liquid_red": { "src": "assets/vol_1/game_06/zlat_red.png", "w": 300, "h": 300 },
+        "g06_zlatanium_liquid_silver": { "src": "assets/vol_1/game_06/zlat_silver.png", "w": 300, "h": 300 },
+        "g06_zlatanium_solid": { "src": "assets/vol_1/game_06/zlat_solid.png", "w": 300, "h": 300 },
+        
+        "g06_haddock_reactions": { "src": "assets/vol_1/game_06/haddock_sheet.png", "w": 512, "h": 512 },
+        
+        "ui_thermometer_frame": { "src": "assets/vol_1/game_06/ui_thermometer.png", "w": 100, "h": 500 },
+        "ui_dial": { "src": "assets/vol_1/game_06/ui_dial.png", "w": 150, "h": 150 },
+        "ui_ice_bucket": { "src": "assets/vol_1/game_06/ui_ice_bucket.png", "w": 150, "h": 150 },
+        "g06_ice_cube": { "src": "assets/vol_1/game_06/ice_cube.png", "w": 64, "h": 64 },
+        "ui_timer_hand": { "src": "assets/vol_1/game_06/ui_timer_hand.png", "w": 40, "h": 100 },
+        "ui_timer_body": { "src": "assets/vol_1/game_06/ui_timer_body.png", "w": 256, "h": 256 }
+    },
+    "game_07_ghostly_inquiry": {
+        "g07_kitchen_bg": { "src": "assets/vol_1/game_07/kitchen_bg.jpg", "w": 1024, "h": 768 },
+        "ui_lens_frame": { "src": "assets/vol_1/game_07/ui_lens_frame.png", "w": 300, "h": 300 },
+        "ui_btn_glass": { "src": "assets/vol_1/game_07/ui_btn_glass.png", "w": 300, "h": 100 }
+    },
+    "game_08_condensation": {
+        "g08_kitchen_bg":      { "src": "assets/vol_1/game_08/kitchen_bg.jpg", "w": 1024, "h": 768 },
+        "g08_cloche":          { "src": "assets/vol_1/game_08/cloche.png", "w": 256, "h": 128 },
+        "g08_gas_cloud":       { "src": "assets/vol_1/game_08/gas_cloud.png", "w": 128, "h": 128 },
+        "g08_water_drop":      { "src": "assets/vol_1/game_08/water_drop.png", "w": 64, "h": 64 },
+        "g08_mold_front":      { "src": "assets/vol_1/game_08/mold_front.png", "w": 256, "h": 128 },
+        "g08_thomson_overlay": { "src": "assets/vol_1/game_08/thomson_fog.jpg", "w": 1024, "h": 768 }
+    },
+    "game_09_captains_exam": {
+        "g09_lab_bg":      { "src": "assets/vol_1/game_09/lab_bg.jpg", "w": 1024, "h": 768 },
+        "g09_icon_ice":    { "src": "assets/vol_1/game_09/icon_ice.png", "w": 200, "h": 200 },
+        "g09_icon_water":  { "src": "assets/vol_1/game_09/icon_water.png", "w": 200, "h": 200 },
+        "g09_icon_steam":  { "src": "assets/vol_1/game_09/icon_steam.png", "w": 200, "h": 200 }
+    },
+    "game_10_atomic_keyhole": {
+        "ui_icon_lever":      { "src": "assets/ui/ui_icon_lever.png", "w": 256, "h": 256 },
+        "g10_tuning_fork":    { "src": "assets/vol_2/game10/tuning_fork.png", "w": 120, "h": 256 },
+        "g10_bg_microscope":  { "src": "assets/vol_2/game10/bg_microscope.jpg", "w": 1024, "h": 768 },
+        "g10_atom_silver":    { "src": "assets/vol_2/game10/atom_silver.png", "w": 256, "h": 256 },
+        "g10_atom_magnesium": { "src": "assets/vol_2/game10/atom_magnesium.png", "w": 256, "h": 256 }
+    },
+    "game_11_atomic_roundup": {
+        "g11_lab_bg":          { "src": "assets/vol_2/game11/lab_bg.jpg", "w": 1536, "h": 1024 },
+        "g11_particle_smoke":  { "src": "assets/vol_2/game11/particle_smoke.png", "w": 128, "h": 128 },
+        "g11_particle_ash":    { "src": "assets/vol_2/game11/particle_ash.png", "w": 128, "h": 128 },
+        "g11_tool_vacuum":     { "src": "assets/vol_2/game11/tool_vacuum.png", "w": 400, "h": 256 },
+        "g11_tool_brush":      { "src": "assets/vol_2/game11/tool_brush.png", "w": 300, "h": 256 },
+        "g11_thomson_walking": { "src": "assets/vol_2/game11/thomson_walking.png", "w": 880, "h": 480 },
+        "g11_thomson_trip":    { "src": "assets/vol_2/game11/thomson_trip.png", "w": 480, "h": 480 },
+        "g11_scale_base":      { "src": "assets/vol_2/game11/scale_base.png", "w": 300, "h": 480 },
+        "g11_scale_beam":      { "src": "assets/vol_2/game11/scale_beam.png", "w": 977, "h": 80 },
+        "g11_scale_pan":       { "src": "assets/vol_2/game11/scale_pan.png", "w": 160, "h": 240 },
+        "g11_scale_weights":   { "src": "assets/vol_2/game11/scale_weights.png", "w": 128, "h": 128 },
+        "g11_scale_jar_empty": { "src": "assets/vol_2/game11/scale_jar_empty.png", "w": 128, "h": 128 },
+        "g11_scale_jar_full":  { "src": "assets/vol_2/game11/scale_jar_full.png", "w": 128, "h": 128 }
+    },
+    "game_12_curiosity": {
+        "g12_bg_microscope":        { "src": "assets/vol_2/game11/lab_bg.jpg", "w": 1536, "h": 1024 },
+        "g12_atom_iron":            { "src": "assets/vol_2/game12/atom_iron.png", "w": 128, "h": 128 },
+        "g12_atom_sulfur":          { "src": "assets/vol_2/game12/atom_sulfur.png", "w": 128, "h": 128 },
+        "g12_molecule_ironsulfide": { "src": "assets/vol_2/game12/molecule_fused.png", "w": 350, "h": 256 },
+        "ui_icon_tweezers":         { "src": "assets/vol_2/game12/icon_tweezers.png", "w": 128, "h": 128 },
+        "ui_icon_tweezers_closed":  { "src": "assets/vol_2/game12/icon_tweezers_closed.png", "w": 128, "h": 128 }
+    },
+    "game_13_sort_out": {
+        "g13_bg_workbench":     { "src": "assets/vol_2/game13/bg_workbench.jpg", "w": 1024, "h": 768 },
+        "g13_glass_beaker":     { "src": "assets/vol_2/game13/glass_beaker.png", "w": 200, "h": 256 },
+        "g13_centrifuge_base":  { "src": "assets/vol_2/game13/centrifuge_base.png", "w": 512, "h": 512 },
+        "g13_centrifuge_tube":  { "src": "assets/vol_2/game13/centrifuge_tube.png", "w": 80, "h": 200 },
+        "g13_centrifuge_rotor": { "src": "assets/vol_2/game13/centrifuge_rotor.png", "w": 256, "h": 256 },
+        "g13_haddock_scrub":    { "src": "assets/vol_2/game13/haddock_scrub.png", "w": 1876, "h": 1024 },
+        "g13_chalkboard":       { "src": "assets/vol_2/game13/chalkboard.png", "w": 512, "h": 384 },
+        "g13_pan_sieve":        { "src": "assets/vol_2/game13/pan_and_sieve.png", "w": 300, "h": 160 },
+        "g13_atom_iron":        { "src": "assets/vol_2/game13/atom_iron.png", "w": 64, "h": 64 },
+        "g13_atom_crystal":     { "src": "assets/vol_2/game13/atom_crystal.png", "w": 64, "h": 64 },
+        "g13_atom_sand":        { "src": "assets/vol_2/game13/atom_sand.png", "w": 64, "h": 64 },
+        "g13_plate_gold":       { "src": "assets/vol_2/game13/plate_gold.png", "w": 128, "h": 128 },
+        "g13_gold_muddy":       { "src": "assets/vol_2/game13/gold_muddy.png", "w": 128, "h": 128 },
+        "g13_tool_magnet":      { "src": "assets/vol_1/game_01/icon_magnet.png", "w": 256, "h": 256 }
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tintin: The Atomic Anchor</title>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/comic.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/packing_puzzle.css">
+</head>
+<body>
+
+    <div id="console-wrapper">
+
+        <section id="start-screen" class="screen active">
+            <div id="initial-cover-loader" class="loading-indicator">
+                <div class="spinner"></div>
+                <span style="color:white; margin-top:15px; font-family:sans-serif; font-weight:bold;">Fetching Case Files...</span>
+            </div>
+
+            <div class="splash-content cover-layout pre-load-hidden">
+                <div class="comic-spine"></div>
+                
+                <div class="cover-header">
+                    <span class="series-badge">THE ADVENTURES OF TINTIN</span>
+                    <h1 class="game-title">The Atomic<br>Anchor</h1>
+                </div>
+
+                <div class="cover-art-container">
+                    <div class="volume-badge">VOL. 1</div>
+                </div>
+                
+                <div class="cover-footer">
+                    <p class="subtitle">An Interactive Chemistry Investigation</p>
+                    <button id="btn-start-adventure" class="primary-btn">START ADVENTURE</button>
+                    
+                    <div class="loading-indicator hidden">
+                        <div class="spinner"></div>
+                        <span id="loading-text">Loading Assets...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comic-host" class="screen hidden">
+            
+            <div id="comic-viewport">
+                </div>
+
+            <div id="reader-controls">
+                <button id="btn-prev-panel" class="nav-arrow" aria-label="Previous Panel">&lt;</button>
+                <div id="progress-bar-container">
+                    <div id="reading-progress"></div>
+                </div>
+                <button id="btn-next-panel" class="nav-arrow" aria-label="Next Panel">&gt;</button>
+            </div>
+        </section>
+
+        <section id="game-guest" class="screen hidden">
+            
+            <canvas id="game-canvas" width="1024" height="768"></canvas>
+            
+            <div id="game-ui-layer">
+                
+                <div id="game-hud">
+                    <div id="score-container" class="hidden">
+                        <span id="hud-label" class="label">Objective:</span> 
+                        <div class="meter"><span id="meter-fill" style="width: 0%"></span></div>
+                    </div>
+                    <button id="btn-skip-puzzle" class="secondary-btn hidden">Skip Puzzle</button>
+                </div>
+
+                <div id="dialogue-overlay" class="hidden">
+                    <div class="bubble">
+                        <p id="dialogue-text"></p>
+                        <button id="btn-dialogue-next" class="text-btn">▼</button>
+                    </div>
+                    <div class="portrait" id="dialogue-portrait"></div>
+                </div>
+
+                <div id="toolbelt-container" class="hidden">
+                    </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,720 @@
+{
+    "common": {
+        "haddockCurses": [
+            "@#$*!", 
+            "Bashi-Bazouks!", 
+            "Ectoplasms!", 
+            "Freshwater swabs!",
+            "Landlubbers!",
+            "Macaques!", 
+            "Miserable earthworms!",
+            "Pirates!", 
+            "Troglodytes!",
+            "Vegetarians!" 
+        ]
+    },
+    "sorting_junk": {
+        "level_1_tutorial": {
+            "debrisCount": 200,
+            "goldCount": 5,
+            "zlataniumCount": 3,
+            "magnetRadius": 100
+        }
+    },
+    "junior_reporter_quiz": {
+        "level_1_deduction": {
+            "introText": "These two rocks look like identical pieces of gold. Let's find out if Chang sent us real Gold, or if it's a trick!",
+            "rocks": [
+                { "id": "rock_A", "trueType": "gold", "streakColor": "#FBC02D", "hammerResult": "flat", "desc": "Specimen A" },
+                { "id": "rock_B", "trueType": "pyrite", "streakColor": "#2E3B32", "hammerResult": "shatter", "desc": "Specimen B" }
+            ],
+            "layout": {
+                "landscape": {
+                    "rockPositions": [{ "x": 350, "y": 500 }, { "x": 674, "y": 500 }],
+                    "rockSize": 128
+                },
+                "portrait": {
+                    "rockPositions": [{ "x": 300, "y": 450 }, { "x": 600, "y": 450 }],
+                    "rockSize": 128
+                }
+            },
+            "questions": [
+                {
+                    "id": "q1_color",
+                    "text": "1. Why shouldn't we identify a mineral just by looking at its outside color?",
+                    "correctAnswerId": "opt2",
+                    "options": [
+                        { "id": "opt1", "label": "Because gold is invisible in the dark." },
+                        { "id": "opt2", "label": "Because impurities or weather can change the surface color." },
+                        { "id": "opt3", "label": "Because minerals change color every day." }
+                    ]
+                },
+                {
+                    "id": "q2_streak",
+                    "text": "2. When I rubbed the mineral on the unglazed porcelain tile, the 'streak' it left behind was actually...",
+                    "correctAnswerId": "opt1",
+                    "options": [
+                        { "id": "opt1", "label": "Powdered mineral." },
+                        { "id": "opt2", "label": "A scratch on the ceramic." },
+                        { "id": "opt3", "label": "A shadow." }
+                    ]
+                },
+                {
+                    "id": "q3_hardness",
+                    "text": "3. What happens if a mineral is harder than the ceramic streak plate?",
+                    "correctAnswerId": "opt2",
+                    "options": [
+                        { "id": "opt1", "label": "It leaves a very dark streak." },
+                        { "id": "opt2", "label": "It scratches the plate and leaves no streak." },
+                        { "id": "opt3", "label": "It melts into a puddle." }
+                    ]
+                },
+                {
+                    "id": "q4_malleability",
+                    "text": "4. Real gold is 'malleable'. When I hit it with the hammer, what did it do?",
+                    "correctAnswerId": "opt3",
+                    "options": [
+                        { "id": "opt1", "label": "It shattered into sharp cubes." },
+                        { "id": "opt2", "label": "It bounced the hammer away." },
+                        { "id": "opt3", "label": "It flattened without breaking." }
+                    ]
+                }
+            ]
+        }
+    },
+    "packing_puzzle": {
+        "level_1_hallway": {
+            "maxLoad": 100,
+            "maxVolume": 100,
+            "layout_desktop": {
+                "crateZone": { "x": 420, "y": 250, "w": 300, "h": 300 },
+                "stacking": { "startX": 90, "startY": 240, "stepX": 10, "stepY": 10 },
+                "characters": {
+                    "snowy": { "x": 300, "y": 330 },
+                    "haddock": { "x": 100, "y": 425 },
+                    "calculus": { "x": 700, "y": 425 }
+                }
+            },
+            "layout_portrait": {
+                "crateZone": { "x": 360, "y": 200, "w": 400, "h": 400 },
+                "stacking": { "startX": 120, "startY": 300, "stepX": 12, "stepY": 12 },
+                "characters": {
+                    "snowy": { "x": 240, "y": 370 },
+                    "haddock": { "x": 50, "y": 538 },
+                    "calculus": { "x": 650, "y": 535 }
+                }
+            },
+            "layout_landscape": {
+                "crateZone": { "x": 420, "y": 250, "w": 250, "h": 250 },
+                "stacking": { "startX": 70, "startY": 200, "stepX": 8, "stepY": 8 },
+                "characters": {
+                    "snowy": { "x": 310, "y": 300 },
+                    "haddock": { "x": 80, "y": 390 },
+                    "calculus": { "x": 680, "y": 390 }
+                }
+            },
+            "items": [
+                { "id": "rock",     "assetId": "g03_item_rock",    "mass": 40, "volume": 10, "desc": "The Zlatanium. Small but incredibly dense." },
+                { 
+                    "id": "coat", 
+                    "assetId": "g03_item_coat", 
+                    "altAssetId": "g03_item_coat_empty",
+                    "mass": 65, 
+                    "volume": 20, 
+                    "desc": "Haddock's wool coat. Surprisingly heavy.",
+                    "desc_shake": "<i>JINGLE! JANGLE!</i><br/>Haddock: 'Blistering Barnacles! I left a bag of gold coins in the pocket!'<br/>(You remove the coins. Now the coat is High Volume, but Low Mass!)",
+                    "descAlt": "Haddock's wool coat.<br/> Now <i>lighter</i> after you shook off the coins"
+                },
+                { 
+                    "id": "statue",   
+                    "assetId": "g03_item_statue",  
+                    "mass": 60, 
+                    "volume": 40, 
+                    "desc": "A golden bust of the Captain. Looks expensive.",
+                    "desc_inspect": "It looks like solid gold... but wait! You peel a corner. It's actually <b>hollow chocolate</b> wrapped in foil!<br>It takes up a lot of <b>Space (Volume)</b>, but has very little <b>Weight (Mass)</b>."
+                },
+                { "id": "sponges",  "assetId": "g03_item_sponges", "mass": 5,  "volume": 20, "desc": "Dry sea sponges. Soft and light." },
+                { "id": "books",    "assetId": "g03_item_books",   "mass": 50, "volume": 20, "desc": "Encyclopedias. Heavy reading." },
+                { "id": "boots",    "assetId": "g03_item_boots",   "mass": 40, "volume": 15, "desc": "Lead-lined diving boots." },
+                { "id": "peanuts",  "assetId": "g03_item_peanuts", "mass": 1,  "volume": 25, "desc": "Styrofoam packing peanuts. Very static-y." }
+            ]
+        }
+    },
+    "thompson_hole_investigation": {
+        "level_1_pantry": {
+            "questions": [
+                {
+                    "id": "q1_pressure_cause",
+                    "text": "Physics? Is he a suspect? We’d better update our notes, Thompson. Tintin, why did the rock fall through instead of just being heavy?",
+                    "correctAnswerId": "B",
+                    "options": [
+                        { "id": "A", "label": "Because the rock is actually a termite in disguise." },
+                        { "id": "B", "label": "Because its heavy mass was concentrated into a tiny, sharp area, creating massive Pressure." },
+                        { "id": "C", "label": "Because the canvas bag was allergic to the rock." }
+                    ]
+                }
+            ]
+        }
+    },
+    "castafiore_soup_quiz": {
+        "level_1_kitchen": {
+            "physics": {
+                "meltThreshold": 80,
+                "vibrationBase": 1.5,
+                "vibrationMax": 8.0,
+                "atomSpeed": 120,
+                "waterSpeed": 180
+            },
+            "layout": {
+                "gridRows": 4,
+                "gridCols": 4,
+                "gridSpacing": 45,
+                "teacupBounds": { "x": 350, "y": 190, "w": 340, "h": 340 }
+            },
+            "questions": [
+                {
+                    "id": "q1_physical",
+                    "text": "Tintin's Correction: The sugar was carried away and mixed. The Zlatanium just melted; its 'people' are still all there, just sliding around. This is a...",
+                    "correctAnswerId": "A",
+                    "options": [
+                        { "id": "A", "label": "Physical change of state" },
+                        { "id": "B", "label": "Chemical reaction" },
+                        { "id": "C", "label": "Magical illusion" }
+                    ]
+                },
+                {
+                    "id": "q2_freeze",
+                    "text": "The Diva asks: 'If the Capitaine cools the water, will my soup turn back into a hard stone?'",
+                    "correctAnswerId": "B",
+                    "options": [
+                        { "id": "A", "label": "No, it will evaporate." },
+                        { "id": "B", "label": "Yes! Solidification (Freezing)." },
+                        { "id": "C", "label": "No, it is permanently ruined." }
+                    ]
+                }
+            ]
+        }
+    },
+    "thermal_equilibrium": {
+        "level_1_stove": {
+            "gameTime": 30,
+            "physics": {
+                "initialTemp": 85,
+                "targetTemp": 20,
+                "maxTemp": 150,
+                "heatHighPower": 5,
+                "heatLowPower": 1,
+                "heatOffPower": -0.115,
+                "iceCoolingPower": 0.55,
+                "iceDecay": 0.125,
+                "thermalShockThreshold": 2, 
+                "integrityDamage": 30
+            },
+            "layout": {
+                "liquid": { "dx": 25, "dy": -30, "w": 150, "h": 115},
+                "dial": { "x": 500, "y": 610, "r": 60 },
+                "iceBucket": { "x": 685, "y": 40, "w": 150, "h": 150 },
+                "thermometer": { "x": 80, "y": 200 },
+                "haddock": { "x": 425, "y": 200 },
+                "pot": { "x": 675, "y": 220, "w": 200, "h": 200 },
+                "integrityBar": { "x": 362, "y": 670 },
+                "clock": {"x": 180, "y": 50}
+            }
+        }
+    },
+    "condensation_catch": {
+        "level_1_kitchen": {
+            "layout": {
+                "iceBucket": { "x": 235, "y": 365, "w": 100, "h": 100 }
+            }
+        }
+    },
+    "captains_final_exam": {
+        "level_1_exam": {
+            "particleCount": 20,
+            "targets": [
+                { "id": "ICE",   "speed": 0.5,  "label": "Ice Block", "color": "#b3f5d9" },
+                { "id": "WATER", "speed": 4.0,  "label": "Water",     "color": "#09d67f" },
+                { "id": "STEAM", "speed": 12.0, "label": "Steam",     "color": "#ECEFF1" }
+            ],
+            "layout": {
+                "slider": { "yStart": 47, "yEnd": 398, "y": 200, "h": 450 }
+            }
+        }
+    },
+    "atomic_keyhole": {
+        "level_1_exam": {
+            "layout": {
+                "fork": { "x": -25, "y": 30, "w": 120, "h": 256 }
+            }
+        }
+    },
+    "atomic_roundup": {
+        "level_1_lab": {
+            "gameplay": {
+                "targetScore": 80,
+                "particleCount": 100,
+                "timeLimit": 30
+            },
+            "layout": {
+                "tableY": 580,
+                "clock": { "x": 880, "y": 20 }
+            }
+        }
+    },
+    "salad_soup_curiosity": {
+        "level_1_microscope": {
+            "physics": {
+                "mixtureFriction": 0.85,
+                "snapThreshold": 180,
+                "springTension": 0.15,
+                "heatDuration": 2.5
+            },
+            "layout": {
+                "lensCenter": { "x": 512, "y": 384 },
+                "lensRadius": 300,
+                "ironCount": 8,
+                "sulfurCount": 8
+            },
+            "questions": [
+                {
+                    "id": "q1_bond",
+                    "text": "Captain, why can we easily pull the iron out of the mud, but the tweezers failed on the heated crystal?",
+                    "correctAnswerId": "opt2",
+                    "options": [
+                        { "id": "opt1", "label": "Because Iron atoms are naturally heavier than Sulfur atoms." },
+                        { "id": "opt2", "label": "In the mud, their outer shells just bumped together. In the heated crystal, their shells merged to form a completely new, rigid structure!" },
+                        { "id": "opt3", "label": "Because the mud is wet, making the atoms slippery." }
+                    ]
+                }
+            ]
+        }
+    },
+    "the_great_sort_out": {
+        "level_1_lab": {
+            "particles": {
+                "iron": 15,
+                "crystals": 12,
+                "sand": 25
+            },
+            "questions": [
+                {
+                    "id": "q1",
+                    "text": "Captain Haddock thinks the blue crystals magically teleported into the pan. Professor Calculus says they reappeared because:",
+                    "correctAnswerId": "opt2",
+                    "options": [
+                        { "id": "opt1", "label": "They were hiding inside the wire mesh of the sieve." },
+                        { "id": "opt2", "label": "They were dissolved. Boiling the water forced them to turn back into solids." },
+                        { "id": "opt3", "label": "The heat lamp melted them and they froze again." }
+                    ]
+                },
+                {
+                    "id": "q2",
+                    "text": "In the centrifuge, why did the muddy gold sink all the way to the very bottom of the test tube, while the sand stayed in the middle?",
+                    "correctAnswerId": "opt1",
+                    "options": [
+                        { "id": "opt1", "label": "Gold has a much higher density than sand." },
+                        { "id": "opt2", "label": "Gold is heavier because it is magnetic." },
+                        { "id": "opt3", "label": "The sand was pushed up by the blue crystals." }
+                    ]
+                },
+                {
+                    "id": "q3",
+                    "text": "Why did we need to dissolve the mixture in water before putting it in the Centrifuge?",
+                    "correctAnswerId": "C",
+                    "options": [
+                        { "id": "A", "label": "Because the centrifuge needs water to cool down its engine." },
+                        { "id": "B", "label": "Because water makes the gold heavier." },
+                        { "id": "C", "label": "Because atoms in a dry solid are stuck together. The liquid gave them freedom to slide past each other and sort by weight!" }
+                    ]
+                },
+                {
+                    "id": "q4",
+                    "text": "What chemical property allowed us to separate the blue crystals from the sand just by adding water?",
+                    "correctAnswerId": "opt2",
+                    "options": [
+                        { "id": "opt1", "label": "Evaporation: The water made the crystals evaporate into the air." },
+                        { "id": "opt2", "label": "Solubility: The crystals dissolve in water, but the sand is insoluble." },
+                        { "id": "opt3", "label": "Density: The water made the sand heavier so it fell out." }
+                    ]
+                },
+                {
+                    "id": "q5",
+                    "text": "After all the magnets, water, spinning, and heating... the Gold Plate stayed exactly the same. What does that tell us?",
+                    "correctAnswerId": "B",
+                    "options": [
+                        { "id": "A", "label": "It is a mixture of water and sand." },
+                        { "id": "B", "label": "It is a pure Element. It doesn't break down or react easily!" },
+                        { "id": "C", "label": "It is highly magnetic." }
+                    ]
+                }
+            ]
+        }
+    },
+    "snowy_runner": {
+        "level_1_endless": {
+            "quizPool": [
+                {
+                    "prompt": "What does a mineral's 'Luster' describe?",
+                    "explanation": "Luster is simply the way a mineral reflects light from its surface, making it look shiny, dull, or metallic.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=mineral+luster",
+                    "learnMoreText": "🎥 Watch: Identifying Mineral Luster",
+                    "options": [
+                        { "label": "How it reflects light", "isCorrect": true },
+                        { "label": "How heavy it is", "isCorrect": false },
+                        { "label": "Its magnetic pull", "isCorrect": false },
+                        { "label": "Its melting point", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Why is Luster a bad way to identify real gold?",
+                    "explanation": "Many minerals, like Pyrite (Fool's Gold), have the exact same shiny, metallic surface as real gold, fooling the eyes.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=pyrite+vs+gold",
+                    "learnMoreText": "🔗 Explore: Pyrite vs. Real Gold",
+                    "options": [
+                        { "label": "Gold doesn't reflect light", "isCorrect": false },
+                        { "label": "Other minerals can look exactly like it", "isCorrect": true },
+                        { "label": "Luster changes in the dark", "isCorrect": false },
+                        { "label": "Gold is always dull", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "When Tintin rubs the mineral on a ceramic tile, what is he testing?",
+                    "explanation": "He is performing a Streak Test, which reveals the true color of the mineral in its powdered form.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=mineral+streak+test",
+                    "learnMoreText": "🎥 Watch: The Streak Test in Geology",
+                    "options": [
+                        { "label": "The mineral's hardness", "isCorrect": false },
+                        { "label": "The mineral's streak", "isCorrect": true },
+                        { "label": "The ceramic's strength", "isCorrect": false },
+                        { "label": "The mineral's weight", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "What happens if you hit a real gold nugget with a hammer?",
+                    "explanation": "Real gold is highly malleable, meaning it will flatten or change shape instead of shattering.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=malleable+metals",
+                    "learnMoreText": "🔗 Explore: Malleability of Metals",
+                    "options": [
+                        { "label": "It shatters into tiny cubes", "isCorrect": false },
+                        { "label": "It flattens without breaking", "isCorrect": true },
+                        { "label": "It turns into a liquid", "isCorrect": false },
+                        { "label": "It bounces back", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Why did the 'gold' nugget shatter when Tintin tapped it?",
+                    "explanation": "The nugget was Pyrite, which is brittle. Unlike malleable gold, brittle minerals break or shatter under pressure.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=brittle+vs+malleable",
+                    "learnMoreText": "🎥 Watch: Brittle vs Malleable Minerals",
+                    "options": [
+                        { "label": "Because it was brittle Pyrite", "isCorrect": true },
+                        { "label": "Because the hammer was magnetic", "isCorrect": false },
+                        { "label": "Because it was too cold", "isCorrect": false },
+                        { "label": "Because it was pure gold", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Which tool can easily separate iron nails from a pile of non-magnetic junk?",
+                    "explanation": "A magnet uses a magnetic field to attract ferromagnetic materials like iron and steel.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=magnetic+separation",
+                    "learnMoreText": "🔗 Explore: Magnetic Separation",
+                    "options": [
+                        { "label": "A ceramic tile", "isCorrect": false },
+                        { "label": "A magnifying glass", "isCorrect": false },
+                        { "label": "A magnet", "isCorrect": true },
+                        { "label": "A sieve", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Why did the dull grey Zlatanium rock crack the mahogany pedestal?",
+                    "explanation": "The rock has extremely high density, meaning it has a massive amount of mass packed into a very small volume.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=what+is+density",
+                    "learnMoreText": "🎥 Watch: Understanding Density",
+                    "options": [
+                        { "label": "It had a sharp edge", "isCorrect": false },
+                        { "label": "It was highly magnetic", "isCorrect": false },
+                        { "label": "It had extremely high density", "isCorrect": true },
+                        { "label": "It was vibrating rapidly", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "How did Professor Calculus explain density using suitcases?",
+                    "explanation": "Density is mass per unit volume. A suitcase full of lead has more mass in the same space (volume) than a suitcase of feathers.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=mass+volume+density",
+                    "learnMoreText": "🔗 Explore: Mass vs. Volume",
+                    "options": [
+                        { "label": "Lead atoms are bigger than feather atoms", "isCorrect": false },
+                        { "label": "A suitcase of lead has more mass in the same volume", "isCorrect": true },
+                        { "label": "Feathers reflect more light", "isCorrect": false },
+                        { "label": "The lead suitcase is physically larger", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "If you have a balloon the size of a house and a small marble made of lead, which is denser?",
+                    "explanation": "Density isn't about total size; it's about how tightly packed the matter is. The lead marble packs more mass into a tiny space.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=density+experiments",
+                    "learnMoreText": "🎥 Watch: High Density vs Low Density",
+                    "options": [
+                        { "label": "The balloon", "isCorrect": false },
+                        { "label": "The lead marble", "isCorrect": true },
+                        { "label": "They are the same", "isCorrect": false },
+                        { "label": "It depends on the temperature", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Why did the heavy rock fall through the canvas bag in the pantry?",
+                    "explanation": "Because of its high density, the rock exerted a huge amount of pressure on a very small area of the canvas, tearing it.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=pressure+and+density",
+                    "learnMoreText": "🔗 Explore: Pressure and Area",
+                    "options": [
+                        { "label": "It created too much pressure", "isCorrect": true },
+                        { "label": "It was covered in grease", "isCorrect": false },
+                        { "label": "The bag was made of paper", "isCorrect": false },
+                        { "label": "It melted the bag", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "What happens to the atoms in a solid when it is heated past its melting point?",
+                    "explanation": "The heat provides kinetic energy, breaking the atoms out of their rigid structure so they can slide past one another as a liquid.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=melting+point+chemistry",
+                    "learnMoreText": "🎥 Watch: Solids Turning to Liquids",
+                    "options": [
+                        { "label": "They shrink and disappear", "isCorrect": false },
+                        { "label": "They gain energy and start sliding around", "isCorrect": true },
+                        { "label": "They turn into a completely different element", "isCorrect": false },
+                        { "label": "They lose all their energy", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "What analogy did Calculus use to describe atoms in a Solid state?",
+                    "explanation": "He compared them to a 'Mosh Pit'—shoulders together, vibrating, but stationary and locked in a grid.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=states+of+matter+particles",
+                    "learnMoreText": "🔗 Explore: Particles in a Solid",
+                    "options": [
+                        { "label": "An Open Field", "isCorrect": false },
+                        { "label": "A Crowded Room sliding around", "isCorrect": false },
+                        { "label": "A Mosh Pit, vibrating but stationary", "isCorrect": true },
+                        { "label": "A swarm of bees", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "When the Zlatanium rock melted in the water, was it a chemical change or a physical change?",
+                    "explanation": "It was a physical change of state! The atoms are still Zlatanium, just moving differently.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=physical+vs+chemical+change",
+                    "learnMoreText": "🎥 Watch: Physical vs Chemical Changes",
+                    "options": [
+                        { "label": "A chemical change", "isCorrect": false },
+                        { "label": "A physical change of state", "isCorrect": true },
+                        { "label": "A magical illusion", "isCorrect": false },
+                        { "label": "It dissolved", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "If you turn the heat off and let liquid silver cool down until it becomes a solid again, what is the process called?",
+                    "explanation": "Turning a liquid into a solid by removing heat (energy) is called freezing or solidification.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=freezing+point",
+                    "learnMoreText": "🔗 Explore: The Process of Freezing",
+                    "options": [
+                        { "label": "Evaporation", "isCorrect": false },
+                        { "label": "Condensation", "isCorrect": false },
+                        { "label": "Freezing (Solidification)", "isCorrect": true },
+                        { "label": "Sublimation", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Why did the liquid Zlatanium turn into a gas when Captain Haddock left the stove on high?",
+                    "explanation": "It reached its Boiling Point. The atoms gained so much kinetic energy they broke completely free from each other.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=boiling+point+chemistry",
+                    "learnMoreText": "🎥 Watch: Reaching the Boiling Point",
+                    "options": [
+                        { "label": "It reached its Boiling Point", "isCorrect": true },
+                        { "label": "It reacted with the copper pot", "isCorrect": false },
+                        { "label": "It was destroyed by the heat", "isCorrect": false },
+                        { "label": "It turned into steam from the water", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "What happens during Condensation?",
+                    "explanation": "Condensation occurs when a gas hits a cooler surface, loses kinetic energy, and turns back into a liquid.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=what+is+condensation",
+                    "learnMoreText": "🔗 Explore: Condensation Explained",
+                    "options": [
+                        { "label": "A liquid turns into a solid", "isCorrect": false },
+                        { "label": "A gas loses energy and becomes a liquid", "isCorrect": true },
+                        { "label": "A solid skips the liquid phase and becomes a gas", "isCorrect": false },
+                        { "label": "Atoms split into smaller pieces", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Why did the silver cloche get hot when the Zlatanium gas condensed on it?",
+                    "explanation": "As the gas turns back into a liquid, it must release the thermal energy it originally absorbed from the stove.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=exothermic+condensation",
+                    "learnMoreText": "🎥 Watch: Heat Release in Condensation",
+                    "options": [
+                        { "label": "The gas releases energy as it becomes a liquid", "isCorrect": true },
+                        { "label": "The cloche was made of copper", "isCorrect": false },
+                        { "label": "Friction from the gas hitting the metal", "isCorrect": false },
+                        { "label": "The ice under it was actually dry ice", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "When the Zlatanium became a 'silver fog', did it lose any of its actual mass?",
+                    "explanation": "No! According to the Law of Conservation of Mass, the atoms are exactly the same, they are just spread much further apart.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=conservation+of+mass",
+                    "learnMoreText": "🔗 Explore: Conservation of Mass",
+                    "options": [
+                        { "label": "Yes, half the atoms vanished", "isCorrect": false },
+                        { "label": "No, the atoms are just further apart and moving faster", "isCorrect": true },
+                        { "label": "Yes, gas has no mass", "isCorrect": false },
+                        { "label": "No, but the atoms shrank in size", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "If you have ice, water, and steam, in which state are the atoms moving the FASTEST?",
+                    "explanation": "In a gas (steam), atoms have the most kinetic energy, meaning they are zooming around and moving the fastest.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=kinetic+theory+of+matter",
+                    "learnMoreText": "🎥 Watch: Kinetic Energy in States of Matter",
+                    "options": [
+                        { "label": "The Ice (Solid)", "isCorrect": false },
+                        { "label": "The Water (Liquid)", "isCorrect": false },
+                        { "label": "The Steam (Gas)", "isCorrect": true },
+                        { "label": "They move at the same speed", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "According to Professor Calculus, what are atoms?",
+                    "explanation": "Atoms are the indivisible building blocks of matter, like the pixels in a photograph or individual LEGO bricks.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=what+is+an+atom",
+                    "learnMoreText": "🔗 Explore: The Building Blocks of Matter",
+                    "options": [
+                        { "label": "Tiny invisible solar systems that make up all matter", "isCorrect": true },
+                        { "label": "Living organisms inside metal", "isCorrect": false },
+                        { "label": "Soft, squishy spheres of energy", "isCorrect": false },
+                        { "label": "Drops of liquid frozen in time", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Why couldn't the Thomsons saw through the Zlatanium cube with a diamond saw?",
+                    "explanation": "They were trying to saw through the atoms themselves. Atoms are the fundamental 'bricks' of the metal and cannot be simply sliced.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=atomic+structure",
+                    "learnMoreText": "🎥 Watch: Can You Cut an Atom?",
+                    "options": [
+                        { "label": "The saw was out of gas", "isCorrect": false },
+                        { "label": "You cannot break the fundamental atomic 'bricks' with a physical saw", "isCorrect": true },
+                        { "label": "Zlatanium is highly magnetic", "isCorrect": false },
+                        { "label": "The cube was made of liquid", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "What did John Dalton teach us about atoms of different elements?",
+                    "explanation": "Dalton theorized that atoms of different elements have different weights, sizes, and chemical properties.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=daltons+atomic+theory",
+                    "learnMoreText": "🔗 Explore: Dalton's Atomic Theory",
+                    "options": [
+                        { "label": "They are all exactly the same", "isCorrect": false },
+                        { "label": "They have different weights and properties", "isCorrect": true },
+                        { "label": "They frequently change into one another", "isCorrect": false },
+                        { "label": "They have no mass", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "How did Tintin dislodge the 'misfit' Magnesium atom from the silver cube?",
+                    "explanation": "Because it was a different weight, it had a different resonant frequency. Vibrating it at that exact rhythm shook it loose.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=resonant+frequency",
+                    "learnMoreText": "🎥 Watch: Understanding Resonance",
+                    "options": [
+                        { "label": "He melted it with a blowtorch", "isCorrect": false },
+                        { "label": "He matched its resonant frequency with vibrations", "isCorrect": true },
+                        { "label": "He used a powerful magnet", "isCorrect": false },
+                        { "label": "He dissolved it in acid", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "When the Magnesium strip burned in the sun, turning into ash and smoke, did its overall mass disappear?",
+                    "explanation": "No! The Law of Conservation of Mass states that in a chemical reaction, matter is neither created nor destroyed, only rearranged.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=law+of+conservation+of+mass+experiment",
+                    "learnMoreText": "🔗 Explore: Mass Conservation in Reactions",
+                    "options": [
+                        { "label": "Yes, fire destroys mass", "isCorrect": false },
+                        { "label": "No, the atoms just moved into the ash and the air", "isCorrect": true },
+                        { "label": "Yes, it became pure energy", "isCorrect": false },
+                        { "label": "No, but the atoms became lighter", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Why did the tray on the scale become lighter after the Magnesium flashed?",
+                    "explanation": "Some of the atoms drifted away as smoke (a gas). If the smoke was captured in a vacuum jar, the weight would perfectly balance.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=closed+vs+open+system+chemistry",
+                    "learnMoreText": "🎥 Watch: Closed vs Open Systems",
+                    "options": [
+                        { "label": "The atoms escaped as gas into the open air", "isCorrect": true },
+                        { "label": "The heat made gravity weaker", "isCorrect": false },
+                        { "label": "The atoms were completely destroyed", "isCorrect": false },
+                        { "label": "The scale was broken by the light", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "How did Professor Calculus explain the difference between a Mixture and a Compound?",
+                    "explanation": "He compared a Mixture to a Salad (where ingredients just touch) and a Compound to a Soup (where ingredients are chemically bonded).",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=mixtures+vs+compounds",
+                    "learnMoreText": "🔗 Explore: Mixtures vs Compounds",
+                    "options": [
+                        { "label": "A Mixture is hot, a Compound is cold", "isCorrect": false },
+                        { "label": "A Mixture is like a Salad, a Compound is like a blended Soup", "isCorrect": true },
+                        { "label": "A Mixture has no atoms", "isCorrect": false },
+                        { "label": "A Compound is always a liquid", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "Why was Tintin able to pull the iron filings out of the sludge with a magnet?",
+                    "explanation": "The sludge was a Mixture, meaning the iron atoms kept their original magnetic properties because they hadn't chemically bonded with the sand.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=separating+mixtures",
+                    "learnMoreText": "🎥 Watch: Separating Mixtures Physically",
+                    "options": [
+                        { "label": "The atoms had melted together", "isCorrect": false },
+                        { "label": "Iron atoms are stronger than sand", "isCorrect": false },
+                        { "label": "In a mixture, elements retain their physical properties", "isCorrect": true },
+                        { "label": "The magnet was chemically reacting", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "How can you separate solid sand from blue crystals that have dissolved in water?",
+                    "explanation": "You use Filtration. The water and dissolved crystals pass through the filter paper, but the larger solid sand particles are trapped.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=filtration+chemistry",
+                    "learnMoreText": "🔗 Explore: The Filtration Process",
+                    "options": [
+                        { "label": "By boiling it immediately", "isCorrect": false },
+                        { "label": "By using a magnet", "isCorrect": false },
+                        { "label": "By pouring it through filter paper", "isCorrect": true },
+                        { "label": "By freezing it", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "After filtering out the sand, how do you get the blue crystals back out of the water?",
+                    "explanation": "By applying heat, the water evaporates (turns to gas), leaving the solid blue crystals behind in the beaker.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=evaporation+separation",
+                    "learnMoreText": "🎥 Watch: Separation by Evaporation",
+                    "options": [
+                        { "label": "Evaporate the water with heat", "isCorrect": true },
+                        { "label": "Use a finer sieve", "isCorrect": false },
+                        { "label": "Add more sand to soak it up", "isCorrect": false },
+                        { "label": "Use a centrifuge", "isCorrect": false }
+                    ]
+                },
+                {
+                    "prompt": "What is an Element, like the gold plate found at the bottom of the mixture?",
+                    "explanation": "An Element is a pure substance where every single atom is of the exact same type. It cannot be separated into anything simpler.",
+                    "learnMoreUrl": "https://www.youtube.com/results?search_query=what+is+an+element",
+                    "learnMoreText": "🔗 Explore: Understanding Elements",
+                    "options": [
+                        { "label": "A substance made of many different mixed atoms", "isCorrect": false },
+                        { "label": "A substance where every single 'brick' (atom) is the exact same type", "isCorrect": true },
+                        { "label": "A liquid that has turned into a gas", "isCorrect": false },
+                        { "label": "A rock with high density", "isCorrect": false }
+                    ]
+                }
+            ]
+        }
+    }
+}

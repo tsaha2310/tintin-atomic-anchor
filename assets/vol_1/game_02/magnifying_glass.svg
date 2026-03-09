@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1C40F" />
+      <stop offset="50%" stop-color="#F39C12" />
+      <stop offset="100%" stop-color="#D35400" />
+    </linearGradient>
+    <linearGradient id="glassShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.7)" />
+      <stop offset="30%" stop-color="rgba(255,255,255,0.1)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+  </defs>
+
+  <line x1="155" y1="155" x2="195" y2="195" stroke="rgba(0,0,0,0.3)" stroke-width="24" stroke-linecap="round"/>
+  <line x1="150" y1="150" x2="190" y2="190" stroke="#5D4037" stroke-width="20" stroke-linecap="round"/>
+  <line x1="148" y1="148" x2="188" y2="188" stroke="#795548" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="150" cy="150" r="14" fill="#BDC3C7" stroke="#7F8C8D" stroke-width="2"/>
+
+  <circle cx="103" cy="103" r="74" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="8"/>
+  <circle cx="100" cy="100" r="74" fill="none" stroke="#7F8C8D" stroke-width="8"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="url(#goldRim)" stroke-width="12"/>
+  <circle cx="100" cy="100" r="64" fill="none" stroke="#333" stroke-width="2"/>
+
+  <path d="M 45 45 Q 80 30 130 60 Q 60 110 45 130 Q 30 90 45 45" fill="url(#glassShine)" />
+</svg>

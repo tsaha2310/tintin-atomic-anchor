@@ -1,0 +1,273 @@
+/* =========================================
+   css/quiz.css
+   Simplified Layout - Top-Down (Column) Journal
+   ========================================= */
+
+/* --- 1. BASE LAYOUT (Desktop / Tablet) --- */
+.quiz-layout {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    overflow: hidden;
+    background-color: #3e2723;
+    display: flex;
+    flex-direction: row; 
+    font-family: 'Courier New', Courier, monospace;
+    pointer-events: auto !important;
+}
+
+/* LEFT: The Journal Container Area */
+.quiz-journal-area {
+    flex: 1; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 30px;
+}
+
+/* THE NOTEBOOK ITSELF */
+.journal-book {
+    /* Sizing */
+    width: 600px;  
+    height: 750px; 
+    max-width: 90vw;
+    max-height: 90vh;
+    
+    /* Background handled by JS */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%; 
+
+    /* LAYOUT: Top-Down Stack */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    
+    /* Generic padding for the paper edge */
+    padding: 40px; 
+    
+    transform: rotate(-1deg);
+    transition: transform 0.5s ease;
+    box-sizing: border-box; 
+}
+
+/* TOP: The Question Text */
+.journal-text {
+    width: 100%;
+    /* Let text take necessary space, up to a limit */
+    flex: 0 1 auto;
+    margin-bottom: 30px; /* Space between text and box */
+    
+    /* Typography */
+    font-size: clamp(1rem, 2.5vh, 1.4rem); 
+    line-height: 1.4;
+    color: #2c3e50;
+    font-weight: 600;
+    
+    overflow-y: auto; /* Scroll if text is too long */
+    text-align: left;
+}
+
+/* BOTTOM: The Drop Zone */
+.journal-target-box {
+    /* Sizing relative to the container width */
+    width: 80%; 
+    /* Aspect ratio roughly matching a landscape card */
+    aspect-ratio: 4/3; 
+    max-height: 40%; /* Don't get too tall */
+    
+    /* Visuals */
+    border: 3px dashed #bbb;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.05);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.journal-target-box::after {
+    content: "PLACE SKETCH HERE";
+    color: #bbb;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 5px;
+}
+
+/* RIGHT: Sidebar Card Area */
+.quiz-card-area {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+    padding-right: 20px;
+    background: rgba(0,0,0,0.1); /* Slight dimming */
+}
+
+/* --- THE CARDS --- */
+.quiz-card {
+    width: 240px;
+    height: auto; /* Let content dictate height */
+    background: white;
+    padding: 8px 8px 4px 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, opacity 0.3s;
+    pointer-events: auto;
+}
+
+.card-image-wrap {
+    width: 100%;
+    aspect-ratio: 4/3; /* Standard photo ratio */
+    background-color: #f0f0f0;
+    overflow: hidden;
+    border: 1px solid #eee;
+    margin-bottom: 5px;
+}
+
+.card-image-wrap img, .card-image-wrap canvas {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.card-caption {
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* =========================================
+   MOBILE PORTRAIT
+   ========================================= */
+@media (max-width: 768px) and (orientation: portrait) {
+    .quiz-layout { flex-direction: column; }
+
+    .quiz-journal-area {
+        flex: 2; /* More space for book */
+        padding: 10px;
+        align-items: flex-end;
+    }
+
+    .journal-book {
+        width: 100%; height: 100%;
+        transform: none;
+        padding: 20px;
+    }
+    
+    .journal-text {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .journal-target-box {
+        width: 90%;
+        aspect-ratio: 3/2; /* Slightly wider/shorter */
+    }
+
+    /* Bottom Card Row */
+    .quiz-card-area {
+        width: 100%;
+        height: 180px; /* Fixed footer height */
+        flex-direction: row;
+        gap: 10px;
+        padding: 10px;
+        background: rgba(0,0,0,0.3);
+    }
+
+    .quiz-card {
+        width: 30%; max-width: 130px;
+        padding: 4px;
+    }
+    
+    .card-caption { font-size: 0.7rem; }
+}
+
+/* =========================================
+   MOBILE LANDSCAPE (Short Height)
+   ========================================= */
+@media (max-height: 600px) and (orientation: landscape) {
+    .quiz-journal-area { padding: 5px; }
+
+    .journal-book {
+        height: 96vh; width: auto; aspect-ratio: 3/4;
+        transform: none;
+        padding: 15px 25px;
+        /* Push content to edges to save center space */
+        justify-content: space-between; 
+    }
+    
+    .journal-text {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+        /* Cap height to ensure box is visible */
+        max-height: 50%; 
+    }
+
+    .journal-target-box {
+        width: 80%;
+        height: 100px; /* Fixed short height */
+        aspect-ratio: auto; /* Override aspect ratio */
+    }
+
+    /* Right Sidebar */
+    .quiz-card-area {
+        width: 220px; 
+        padding: 5px 10px 5px 0;
+        gap: 8px;
+    }
+
+    /* Strip Cards */
+    .quiz-card {
+        width: 100%; height: 60px;
+        flex-direction: row; 
+        padding: 4px; gap: 8px;
+    }
+    
+    .quiz-card:not(.anim-shake) { transform: none !important; }
+
+    .card-image-wrap {
+        width: 50px; height: 100%;
+        aspect-ratio: auto;
+        margin-bottom: 0;
+    }
+
+    .card-caption {
+        justify-content: flex-start; text-align: left;
+        font-size: 0.75rem;
+    }
+}
+
+/* --- ANIMATIONS (Unchanged) --- */
+@keyframes shake-reject {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-5px) rotate(-5deg); } 
+    40% { transform: translateX(5px) rotate(5deg); }
+    60% { transform: translateX(-5px) rotate(-5deg); }
+    80% { transform: translateX(5px) rotate(5deg); }
+}
+.anim-shake { animation: shake-reject 0.4s ease-in-out; background-color: #ffcdd2; }
+.tape-strip {
+    position: absolute; width: 60px; height: 25px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    z-index: 6; opacity: 0; transform: scale(1.5); transition: all 0.2s ease-out;
+}
+.tape-strip.visible { opacity: 0.9; transform: scale(1) rotate(-45deg); }
+.tape-strip.visible:nth-child(2) { transform: scale(1) rotate(45deg); }

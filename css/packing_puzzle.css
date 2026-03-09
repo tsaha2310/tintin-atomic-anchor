@@ -1,0 +1,113 @@
+/* =========================================
+   PACKING PUZZLE - FINAL RESPONSIVE FIX
+   ========================================= */
+
+/* --- Shared Component Styles (Buttons, Meters, Grid Icons) --- */
+.verb-btn {
+    background: #f1c40f; /* Tintin Yellow */
+    border: 3px solid #000;
+    padding: 10px 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.4);
+    touch-action: manipulation;
+}
+.verb-btn.selected, .verb-btn:active { background: #d35400; color: white; box-shadow: none; transform: translate(2px, 2px); }
+
+.inventory-grid {
+    /* Shared grid properties, layout handled in media queries */
+    background: #2c3e50;
+    padding: 8px;
+    border: 3px solid #000;
+    overflow-y: auto;
+    pointer-events: auto !important;
+}
+
+.inv-slot {
+    aspect-ratio: 1 / 1;
+    background: rgba(0,0,0,0.3);
+    border: 2px solid #555;
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer;
+}
+.inv-icon { width: 90%; height: 90%; object-fit: contain; }
+
+.meters-panel { display: flex; flex-direction: column; gap: 8px; padding: 8px; background: #222; border: 2px solid #000; }
+.meter-label { color: white; font-size: 0.7rem; font-weight: bold; }
+.bar-bg { width: 100%; height: 15px; background: #444; border: 2px solid #000; }
+#bar-vol { background: #3498db; height: 100%; }
+#bar-mass { background: #e74c3c; height: 100%; }
+
+
+/* ==================================================================
+   LAYOUT 1: DESKTOP (Default / >768px wide)
+   TARGET: Restores the original bottom bar layout exactly.
+   ================================================================== */
+@media screen and (min-width: 769px) {
+    /* Desktop: Everything in one horizontal row */
+    .top-row-container { display: contents; }
+    
+    .verb-bank { width: 150px; display: flex; flex-direction: column; gap: 10px; margin-right: 20px; justify-content: center; position: absolute; top: 0px; }
+    
+    .inventory-grid { flex: 1; display: flex; position: absolute; bottom: 0px; gap: 10px; }
+    
+    .meters-panel { width: 180px; margin-left: 20px; justify-content: center; position: absolute; right: 0px; }
+
+    #game-hud { position: absolute; width: 100%; justify-content: center; }
+}
+
+
+/* ==================================================================
+   LAYOUT 2: MOBILE PORTRAIT (Vertical Phones)
+   TARGET: Fix overlap with "Skip" button. Use vertical space.
+   ================================================================== */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .top-row-container { display: flex; height: 70px; margin-bottom: 10px; gap: 10px; margin-top: 5px; }
+    
+    .verb-bank { 
+        flex: 0 0 auto; display: flex; flex-direction: column; gap: 2px; 
+        width: 100px; margin-right: 20px; justify-content: center;
+        position: absolute; 
+     }
+
+    .verb-btn { flex: 1; font-size: 0.8rem; padding: 5px; display: flex; align-items: center; justify-content: center; padding: 10px; }
+    
+    .meters-panel { flex: 0 0 auto; width: 150px; margin-left: 20px; justify-content: center; position: absolute; right: 0px; }
+
+    .inventory-grid { flex: 1; display: flex; position: absolute; bottom: 0px; }
+
+    #game-hud { position: absolute; width: 100%; justify-content: center; background: none; }
+    #btn-skip-puzzle { width: 70px; margin-right: 40px; }
+}
+
+
+/* ==================================================================
+   LAYOUT 3: MOBILE LANDSCAPE (Horizontal Phones)
+   TARGET: Right sidebar. No overlap with game area.
+   ================================================================== */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+    .top-row-container { display: contents; }
+    
+    .verb-bank { flex: 0 0 auto; display: flex; 
+        flex-direction: column; gap: 2px; 
+        width: 140px; margin-right: 20px; justify-content: center;
+        position: absolute; top: 0px;
+     }
+
+    .verb-btn { font-size: 0.8rem; padding: 8px; }
+    
+    .inventory-grid { flex: 1; display: flex; position: absolute; bottom: 0px; gap: 10px; }
+    
+    .meters-panel { flex: 0 0 auto; width: 180px; margin-left: 20px; justify-content: center; position: absolute; right: 0px; }
+
+    #dialogue-overlay { bottom: 20%; }
+
+    #game-hud { position: absolute; width: 100%; justify-content: center; background: none; }
+    #btn-skip-puzzle { width: 70px; margin-right: 40px; }
+}

@@ -1,0 +1,131 @@
+[
+    {
+        "trigger_panel_id": "113_5",
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "sorting_junk", 
+                "levelId": "level_1_tutorial" 
+            },
+            { 
+                "moduleId": "junior_reporter_quiz", 
+                "levelId": "level_1_deduction" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "124_5",
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "packing_puzzle", 
+                "levelId": "level_1_hallway" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "127_3", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "thompson_hole_investigation", 
+                "levelId": "level_1_pantry" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "133_3", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "castafiore_soup_quiz", 
+                "levelId": "level_1_kitchen" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "134_2", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "thermal_equilibrium", 
+                "levelId": "level_1_stove" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "142_3", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "condensation_catch", 
+                "levelId": "level_1_kitchen" 
+            },
+            { 
+                "moduleId": "ghostly_inquiry", 
+                "levelId": "level_1_kitchen" 
+            }
+
+        ]
+    },
+    {
+        "trigger_panel_id": "146_2", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "captains_final_exam", 
+                "levelId": "level_1_exam" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "213_1", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "atomic_keyhole", 
+                "levelId": "level_1_exam" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "222_2", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "atomic_roundup", 
+                "levelId": "level_1_lab" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "231_3", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "salad_soup_curiosity", 
+                "levelId": "level_1_microscope" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "232_2", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "the_great_sort_out", 
+                "levelId": "level_1_lab" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "233_4", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "snowy_runner", 
+                "levelId": "level_1_endless" 
+            }
+        ]
+    }
+]

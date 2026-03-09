@@ -161,12 +161,6 @@ Whether you want to add a new mini-game about molecular bonding or
 simply rewrite a quiz question to match your child\'s specific science
 homework, the modular nature of the engine makes it highly adaptable.
 
-### Future
-
-The story and gameplay is under active development. Future episodes
-covering the Periodic table and Electron Orbitals are being worked upon.
-Please feel free to reach out if you would like to contribute.
-
 ### Current Status & Future Work
 
 This is an actively evolving educational platform. While the core engine 

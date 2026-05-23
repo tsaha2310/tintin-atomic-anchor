@@ -1,5 +1,7 @@
 # The Adventures of Tintin: The Atomic Anchor
 
+Here is the latest version of the game hosted on github: [The Atomic Anchor](https://tsaha2310.github.io/tintin-atomic-anchor/)
+
 An Interactive Narrative & Chemistry Curriculum
 
 Welcome to **The Atomic Anchor**, an interactive, browser-based

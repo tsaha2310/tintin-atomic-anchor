@@ -54,6 +54,18 @@ export class PackingPuzzle extends PacAdventureGame {
         // 4. Setup UI (Middleware)
         this.setupInterface(['MOVE', 'LOOK', 'SHAKE']);
 
+        // --- Create and inject the entire meters panel for this game ---
+        const topRow = this.uiRoot.querySelector('.top-row-container');
+        if (topRow) {
+            const metersPanel = document.createElement('div');
+            metersPanel.className = 'meters-panel';
+            metersPanel.innerHTML = `
+                <div class="meter-row"><span class="meter-label">VOL</span><div class="bar-bg"><div id="bar-vol" style="width:0%"></div></div></div>
+                <div class="meter-row"><span class="meter-label">MASS</span><div class="bar-bg"><div id="bar-mass" style="width:0%"></div></div></div>
+            `;
+            topRow.appendChild(metersPanel);
+        }
+
         // 5. Setup Scene
         // Populate Inventory from JSON
         this.tuning.items.forEach(itemData => {

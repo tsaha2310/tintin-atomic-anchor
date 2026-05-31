@@ -1,0 +1,15 @@
+{
+  "fsmId": "fsm_snowy_g15",
+  "initialState": "IDLE",
+  "states": {
+    "IDLE": {
+      "animation": "anim_snowy_side_idle",
+      "loop": false,
+      "blendDurationMs": 200,
+      "transitions": [
+        { "trigger": "TRIGGER_PUFF", "targetState": "PUFFED", "blendOverrideMs": 100 },
+        { "trigger": "PLAY_IDLE", "targetState": "IDLE", "blendOverrideMs": 100 }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "fsmId": "fsm_haddock_g15",
+  "initialState": "BASIC_IDLE",
+  "states": {
+    "BASIC_IDLE": {
+      "animation": "anim_haddock_front_idle",
+      "loop": false,
+      "blendDurationMs": 200,
+      "transitions": [
+        { "trigger": "TRIGGER_ZAP", "targetState": "SHOCKED", "blendOverrideMs": 50 },
+        { "trigger": "TRIGGER_SCRATCH", "targetState": "SCRATCHING_BEARD", "blendOverrideMs": 200 },
+        { "trigger": "PLAY_IDLE", "targetState": "BASIC_IDLE", "blendOverrideMs": 200 }
+      ]
+    },
+    "SCRATCHING_BEARD": {
+      "animation": "anim_haddock_front_scratch",
+      "loop": false,
+      "blendDurationMs": 200,
+      "transitions": [
+        { "trigger": "ON_ANIM_END", "targetState": "BASIC_IDLE" },
+        { "trigger": "TRIGGER_ZAP", "targetState": "SHOCKED", "blendOverrideMs": 50 }
+      ]
+    }
+  }
+}

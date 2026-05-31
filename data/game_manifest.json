@@ -127,5 +127,25 @@
                 "levelId": "level_1_endless" 
             }
         ]
+    },
+    {
+        "trigger_panel_id": "311_3", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "the_haddock_heave", 
+                "levelId": "level_1_mountain" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "323_3", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "the_leyden_jar_conundrum", 
+                "levelId": "level_1_bridge" 
+            }
+        ]
     }
 ]

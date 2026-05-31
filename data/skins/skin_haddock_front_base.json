@@ -1,0 +1,22 @@
+{
+  "skinId": "custom_skin",
+  "rigId": "custom_rig",
+  "mappings": {
+    "beard":       { "assetId": "ch_haddock_front_beard"      , "scale": 1, "zIndexOffset": 0 },
+    "boot_l":      { "assetId": "ch_haddock_front_boot_l"     , "scale": 1, "zIndexOffset": 0 },
+    "boot_r":      { "assetId": "ch_haddock_front_boot_r"     , "scale": 1, "zIndexOffset": 0 },
+    "hand_l":      { "assetId": "ch_haddock_front_hand_l"     , "scale": 1, "zIndexOffset": 0 },
+    "hand_r":      { "assetId": "ch_haddock_front_hand_r"     , "scale": 1, "zIndexOffset": 0 },
+    "head":        { "assetId": "ch_haddock_front_head_base"  , "scale": 1, "zIndexOffset": 0 },
+    "lower_arm_l": { "assetId": "ch_haddock_front_lower_arm_l", "scale": 1, "zIndexOffset": 0 },
+    "lower_arm_r": { "assetId": "ch_haddock_front_lower_arm_r", "scale": 1, "zIndexOffset": 0 },
+    "lower_leg_l": { "assetId": "ch_haddock_front_lower_leg_l", "scale": 1, "zIndexOffset": 0 },
+    "lower_leg_r": { "assetId": "ch_haddock_front_lower_leg_r", "scale": 1, "zIndexOffset": 0 },
+    "mouth":       { "assetId": "ch_haddock_front_mouth"      , "scale": 1, "zIndexOffset": 0 },
+    "torso":       { "assetId": "ch_haddock_front_torso"      , "scale": 1, "zIndexOffset": 0 },
+    "upper_arm_l": { "assetId": "ch_haddock_front_upper_arm_l", "scale": 1, "zIndexOffset": 0 },
+    "upper_arm_r": { "assetId": "ch_haddock_front_upper_arm_r", "scale": 1, "zIndexOffset": 0 },
+    "upper_leg_l": { "assetId": "ch_haddock_front_upper_leg_l", "scale": 1, "zIndexOffset": 0 },
+    "upper_leg_r": { "assetId": "ch_haddock_front_upper_leg_r", "scale": 1, "zIndexOffset": 0 }
+  }
+}

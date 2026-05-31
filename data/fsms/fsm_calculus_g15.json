@@ -1,0 +1,23 @@
+{
+  "fsmId": "fsm_calculus_g15",
+  "initialState": "IDLE",
+  "states": {
+    "IDLE": {
+      "animation": "anim_calculus_front_idle",
+      "loop": false,
+      "blendDurationMs": 200,
+      "transitions": [
+        { "trigger": "PLAY_IDLE", "targetState": "IDLE", "blendOverrideMs": 100 },
+        { "trigger": "TRIGGER_EXPLAIN", "targetState": "EXPLAINING", "blendOverrideMs": 150 }
+      ]
+    },
+    "EXPLAINING": {
+      "animation": "anim_calculus_front_explain",
+      "loop": false,
+      "blendDurationMs": 200,
+      "transitions": [
+        { "trigger": "STOP_EXPLAIN", "targetState": "IDLE", "blendOverrideMs": 200 }
+      ]
+    }
+  }
+}

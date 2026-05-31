@@ -1,0 +1,24 @@
+{
+  "fsmId": "fsm_tintin_g15",
+  "initialState": "IDLE",
+  "states": {
+    "IDLE": {
+      "animation": "anim_tintin_side_idle",
+      "loop": false,
+      "blendDurationMs": 200,
+      "transitions": [
+        { "trigger": "TRIGGER_RUB", "targetState": "RUBBING", "blendOverrideMs": 100 },
+        { "trigger": "TRIGGER_WALK", "targetState": "WALKING", "blendOverrideMs": 300 },
+        { "trigger": "PLAY_IDLE", "targetState": "IDLE", "blendOverrideMs": 100 }
+      ]
+    },
+    "WALKING": {
+      "animation": "anim_tintin_side_walk",
+      "loop": true,
+      "transitions": [
+        { "trigger": "STOP_WALK", "targetState": "IDLE", "blendOverrideMs": 200 },
+        { "trigger": "TRIGGER_REPEL", "targetState": "REPELLED", "blendOverrideMs": 50 }
+      ]
+    }
+  }
+}

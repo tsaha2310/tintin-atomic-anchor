@@ -1,0 +1,136 @@
+{
+  "meta": { "exportScale": 1, "generator": "Sprite Composer v1.1 - Optimized" },
+  "animId": "anim_snowy_side_idle",
+  "length": 60,
+  "tracks": {
+    "eye_l": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 16 },
+        { "frame": 30, "value": 0 }
+      ],
+      "offsetX": [
+        { "frame": 0 , "value": 25 },
+        { "frame": 15, "value": 17.9 },
+        { "frame": 30, "value": 25 }
+      ]
+    },
+    "eye_r": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": -21 },
+        { "frame": 30, "value": 0 }
+      ]
+    },
+    "f_b_leg_upper": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 29 },
+        { "frame": 30, "value": 0 }
+      ],
+      "offsetX": [
+        { "frame": 0 , "value": 256.559 },
+        { "frame": 15, "value": 250 }
+      ],
+      "offsetY": [
+        { "frame": 0 , "value": 70.12 },
+        { "frame": 15, "value": 49.6 }
+      ]
+    },
+    "f_f_feet": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 7 },
+        { "frame": 30, "value": 0 }
+      ],
+      "offsetX": [
+        { "frame": 0 , "value": 76.903 },
+        { "frame": 15, "value": 44.64 }
+      ],
+      "offsetY": [
+        { "frame": 0 , "value": 214.032 },
+        { "frame": 15, "value": 210.05 }
+      ]
+    },
+    "f_f_leg_lower": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 14 },
+        { "frame": 30, "value": 9 }
+      ],
+      "offsetX": [
+        { "frame": 0 , "value": 58.506 },
+        { "frame": 15, "value": 47.752 }
+      ],
+      "offsetY": [
+        { "frame": 0 , "value": 137.816 },
+        { "frame": 15, "value": 136.489 }
+      ]
+    },
+    "f_f_leg_upper": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 7 },
+        { "frame": 30, "value": 0 }
+      ]
+    },
+    "head": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 7 },
+        { "frame": 30, "value": 0 }
+      ],
+      "offsetY": [
+        { "frame": 0 , "value": -307 },
+        { "frame": 15, "value": -293.859 },
+        { "frame": 30, "value": -307 }
+      ]
+    },
+    "mouth": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": -8 },
+        { "frame": 30, "value": 0 }
+      ],
+      "scaleX": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 15, "value": 0.95 },
+        { "frame": 30, "value": 1 }
+      ],
+      "scaleY": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 15, "value": 1.02 },
+        { "frame": 30, "value": 1 }
+      ]
+    },
+    "r_b_leg_upper": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 4 },
+        { "frame": 30, "value": 0 }
+      ]
+    },
+    "r_f_leg_upper": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 1 },
+        { "frame": 30, "value": 0 }
+      ]
+    },
+    "tail": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 14 },
+        { "frame": 30, "value": 0 }
+      ],
+      "offsetX": [
+        { "frame": 0 , "value": -205.99 },
+        { "frame": 15, "value": -200.734 }
+      ],
+      "offsetY": [
+        { "frame": 0 , "value": -163.783 },
+        { "frame": 15, "value": -161.155 }
+      ]
+    }
+  }
+}

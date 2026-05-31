@@ -16,6 +16,8 @@ import { AtomicKeyhole } from './games/AtomicKeyhole.js';
 import { AtomicRoundup } from './games/AtomicRoundup.js';
 import { SaladSoupCuriosityQuiz } from './games/SaladSoupCuriosityQuiz.js';
 import { TheGreatSortOut } from './games/TheGreatSortOut.js';
+import { TheHaddockHeave } from './games/TheHaddockHeave.js';
+import { TheLeydenJarConundrum } from './games/TheLeydenJarConundrum.js';
 import { SnowyRunner } from './games/SnowyRunner.js';
 
 // DEBUG: Set to 'sorting_junk' to test Game 1, or null for normal mode.
@@ -520,8 +522,14 @@ class App {
                 case 'the_great_sort_out':
                     this.activeGame = new TheGreatSortOut(gameInitConfig);
                     break;
+                case 'the_haddock_heave':
+                    this.activeGame = new TheHaddockHeave(gameInitConfig);
+                    break;
                 case 'snowy_runner':
                     this.activeGame = new SnowyRunner(gameInitConfig);
+                    break;
+                case 'the_leyden_jar_conundrum':
+                    this.activeGame = new TheLeydenJarConundrum(gameInitConfig);
                     break;
                 default:
                     console.error("Unknown Module:", moduleId);

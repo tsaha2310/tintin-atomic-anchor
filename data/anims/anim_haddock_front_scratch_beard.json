@@ -1,0 +1,104 @@
+{
+  "meta": { "exportScale": 1, "generator": "Sprite Composer v1.1 - Optimized" },
+  "animId": "anim_custom",
+  "length": 60,
+  "tracks": {
+    "hand_l": {
+      "scaleX": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 15, "value": 0.95 },
+        { "frame": 25, "value": 0.91 },
+        { "frame": 35, "value": 1 }
+      ],
+      "scaleY": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 15, "value": 0.65 },
+        { "frame": 25, "value": 0.77 },
+        { "frame": 35, "value": 1 }
+      ]
+    },
+    "head": {
+      "offsetX": [
+        { "frame": 0 , "value": 3 },
+        { "frame": 15, "value": -2 },
+        { "frame": 20, "value": -5 },
+        { "frame": 25, "value": -1 },
+        { "frame": 35, "value": 3 }
+      ]
+    },
+    "lower_arm_l": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": -148 },
+        { "frame": 20, "value": -140 },
+        { "frame": 25, "value": -147 },
+        { "frame": 35, "value": 0 }
+      ],
+      "offsetX": [
+        { "frame": 0 , "value": -81.47 },
+        { "frame": 15, "value": -69.79 },
+        { "frame": 20, "value": -67.62 },
+        { "frame": 25, "value": -70.693 },
+        { "frame": 35, "value": -81.47 }
+      ],
+      "offsetY": [
+        { "frame": 0 , "value": 278.58 },
+        { "frame": 15, "value": 279.92 },
+        { "frame": 20, "value": 281.47 },
+        { "frame": 25, "value": 277.454 },
+        { "frame": 35, "value": 278.58 }
+      ],
+      "scaleX": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 15, "value": 1.15 },
+        { "frame": 35, "value": 1 }
+      ],
+      "scaleY": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 15, "value": 1.75 },
+        { "frame": 25, "value": 1.5 },
+        { "frame": 35, "value": 1 }
+      ]
+    },
+    "mouth": {
+      "scaleY": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 15, "value": 0.8 },
+        { "frame": 20, "value": 0.75 },
+        { "frame": 25, "value": 0.9 },
+        { "frame": 35, "value": 1 }
+      ]
+    },
+    "torso": {
+      "offsetX": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": -2 },
+        { "frame": 25, "value": -1 },
+        { "frame": 35, "value": 0 }
+      ],
+      "offsetY": [
+        { "frame": 0 , "value": -871.267 }
+      ]
+    },
+    "upper_arm_l": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 20 },
+        { "frame": 20, "value": 10 },
+        { "frame": 25, "value": 20 },
+        { "frame": 35, "value": 0 }
+      ]
+    },
+    "upper_arm_r": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 15, "value": 3 },
+        { "frame": 20, "value": 2 },
+        { "frame": 25, "value": 0 }
+      ],
+      "offsetX": [
+        { "frame": 0 , "value": 179.312 }
+      ]
+    }
+  }
+}

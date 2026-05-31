@@ -1,0 +1,20 @@
+{
+  "skinId": "custom_skin",
+  "rigId": "custom_rig",
+  "mappings": {
+    "arm_lower_l": { "assetId": "ch_thomson_arm_lower_l", "scale": 1, "zIndexOffset": 0 },
+    "arm_lower_r": { "assetId": "ch_thomson_arm_lower_r", "scale": 1, "zIndexOffset": 0 },
+    "arm_upper_l": { "assetId": "ch_thomson_arm_upper_l", "scale": 1, "zIndexOffset": 0 },
+    "arm_upper_r": { "assetId": "ch_thomson_arm_upper_r", "scale": 1, "zIndexOffset": 0 },
+    "boot_l":      { "assetId": "ch_thomson_boot_l"     , "scale": 1, "zIndexOffset": 0 },
+    "boot_r":      { "assetId": "ch_thomson_boot_r"     , "scale": 1, "zIndexOffset": 0 },
+    "hand_l":      { "assetId": "ch_thomson_hand_l"     , "scale": 1, "zIndexOffset": 0 },
+    "hand_r":      { "assetId": "ch_thomson_hand_r"     , "scale": 1, "zIndexOffset": 0 },
+    "head":        { "assetId": "ch_thomson_head"       , "scale": 1, "zIndexOffset": 0 },
+    "leg_lower_l": { "assetId": "ch_thomson_leg_lower_l", "scale": 1, "zIndexOffset": 0 },
+    "leg_lower_r": { "assetId": "ch_thomson_leg_lower_r", "scale": 1, "zIndexOffset": 0 },
+    "leg_upper_l": { "assetId": "ch_thomson_leg_upper_l", "scale": 1, "zIndexOffset": 0 },
+    "leg_upper_r": { "assetId": "ch_thomson_leg_upper_r", "scale": 1, "zIndexOffset": 0 },
+    "torso":       { "assetId": "ch_thomson_torso"      , "scale": 1, "zIndexOffset": 0 }
+  }
+}

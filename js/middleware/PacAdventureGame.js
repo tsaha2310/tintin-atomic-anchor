@@ -67,18 +67,7 @@ export class PacAdventureGame extends Game {
             verbBank.appendChild(btn);
         });
 
-        // 6c. Meters Panel (Create placeholder, filled later by Game)
-        const metersPanel = document.createElement('div');
-        metersPanel.className = 'meters-panel';
-        // Add default structure so CSS has something to target immediately
-        metersPanel.innerHTML = `
-            <div class="meter-row"><span class="meter-label">VOL</span><div class="bar-bg"><div id="bar-vol" style="width:0%"></div></div></div>
-            <div class="meter-row"><span class="meter-label">MASS</span><div class="bar-bg"><div id="bar-mass" style="width:0%"></div></div></div>
-        `;
-
-        // Add to top row wrapper
         topRow.appendChild(verbBank);
-        topRow.appendChild(metersPanel);
 
         // 6b. Inventory Grid
         const invGrid = document.createElement('div');

@@ -1,0 +1,11 @@
+{
+  "fsmId": "fsm_thomson_g15",
+  "initialState": "VIBRATING",
+  "states": {
+    "VIBRATING": {
+      "loop": false,
+      "blendDurationMs": 0,
+      "transitions": []
+    }
+  }
+}

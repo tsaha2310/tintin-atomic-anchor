@@ -1,0 +1,115 @@
+{
+  "meta": { "exportScale": 1, "generator": "Sprite Composer v1.1 - Optimized" },
+  "animId": "anim_calculus_front_idle",
+  "length": 60,
+  "tracks": {
+    "arm_lower_l": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": 3 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "arm_lower_r": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": -3 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "arm_upper_l": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": 2 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "arm_upper_r": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": -2 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "eye_l": {
+      "scaleX": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 20, "value": 1.25 },
+        { "frame": 40, "value": 1 }
+      ],
+      "scaleY": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 20, "value": 1.25 },
+        { "frame": 40, "value": 1 }
+      ]
+    },
+    "eye_r": {
+      "scaleX": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 20, "value": 1.25 },
+        { "frame": 40, "value": 1 }
+      ],
+      "scaleY": [
+        { "frame": 0 , "value": 1 },
+        { "frame": 20, "value": 1.25 },
+        { "frame": 40, "value": 1 }
+      ]
+    },
+    "hand_l": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": 3 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "hand_r": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": -3 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "head": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": 3 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "leg_lower_l": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": 2 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "leg_lower_r": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": -4 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "leg_upper_l": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": 2 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "leg_upper_r": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": -3 },
+        { "frame": 40, "value": 0 }
+      ]
+    },
+    "torso": {
+      "rotation": [
+        { "frame": 0 , "value": 0 },
+        { "frame": 20, "value": 1 },
+        { "frame": 40, "value": 0 }
+      ]
+    }
+  }
+}

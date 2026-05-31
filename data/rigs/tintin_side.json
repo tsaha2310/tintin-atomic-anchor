@@ -1,0 +1,25 @@
+{
+  "rigId": "custom_rig",
+  "meta": { "exportScale": 1 },
+  "bones": [
+    { "name": "boot_l"     , "parent": "lower_leg_l", "pivot": { "x": 0.305, "y": 0.437 }, "defaultOffset": { "x": 3.79,    "y": 142.93   }, "defaultRotation": 8,  "zIndex": 8 },
+    { "name": "boot_r"     , "parent": "lower_leg_r", "pivot": { "x": 0.310, "y": 0.276 }, "defaultOffset": { "x": -18.397, "y": 139.29   }, "defaultRotation": 0,  "zIndex": 14 },
+    { "name": "eye"        , "parent": "head"       , "pivot": { "x": 0.5,   "y": 0.5   }, "defaultOffset": { "x": 79.372,  "y": -103.381 }, "defaultRotation": 0,  "zIndex": 11 },
+    { "name": "hand_l"     , "parent": "lower_arm_l", "pivot": { "x": 0.363, "y": 0.045 }, "defaultOffset": { "x": 49.934,  "y": 178.712  }, "defaultRotation": 0,  "zIndex": 2 },
+    { "name": "hand_r"     , "parent": "lower_arm_r", "pivot": { "x": 0.363, "y": 0.045 }, "defaultOffset": { "x": 49.934,  "y": 178.712  }, "defaultRotation": 0,  "zIndex": 27 },
+    { "name": "head"       , "parent": "torso"      , "pivot": { "x": 0.524, "y": 0.825 }, "defaultOffset": { "x": 2.078,   "y": -250.263 }, "defaultRotation": 0,  "zIndex": 10 },
+    { "name": "lower_arm_l", "parent": "upper_arm_l", "pivot": { "x": 0.438, "y": 0.021 }, "defaultOffset": { "x": -26.281, "y": 278.581  }, "defaultRotation": 0,  "zIndex": 2 },
+    { "name": "lower_arm_r", "parent": "upper_arm_r", "pivot": { "x": 0.438, "y": 0.021 }, "defaultOffset": { "x": -26.281, "y": 278.581  }, "defaultRotation": 0,  "zIndex": 26 },
+    { "name": "lower_leg_l", "parent": "upper_leg_l", "pivot": { "x": 0.622, "y": 0.201 }, "defaultOffset": { "x": -50.0,   "y": 102.0    }, "defaultRotation": 10, "zIndex": 5 },
+    { "name": "lower_leg_r", "parent": "upper_leg_r", "pivot": { "x": 0.514, "y": 0.073 }, "defaultOffset": { "x": -36.794, "y": 128.778  }, "defaultRotation": 0,  "zIndex": 13 },
+    { "name": "mouth"      , "parent": "head"       , "pivot": { "x": 0.5,   "y": 0.5   }, "defaultOffset": { "x": 77.116,  "y": -21.997  }, "defaultRotation": 0,  "zIndex": 11 },
+    { "name": "root"       , "parent": null         , "pivot": { "x": 0.5,   "y": 1     }, "defaultOffset": { "x": 0,       "y": 0        }, "defaultRotation": 0,  "zIndex": 0 },
+    { "name": "thigh_l"    , "parent": "torso"      , "pivot": { "x": 0.669, "y": 0.064 }, "defaultOffset": { "x": 4.705,   "y": 225.9    }, "defaultRotation": -16,"zIndex": 5 },
+    { "name": "thigh_r"    , "parent": "torso"      , "pivot": { "x": 0.566, "y": 0.05  }, "defaultOffset": { "x": -37.344, "y": 225.426  }, "defaultRotation": 0,  "zIndex": 6 },
+    { "name": "torso"      , "parent": "root"       , "pivot": { "x": 0.5,   "y": 0.5   }, "defaultOffset": { "x": -41.5,   "y": -929.5   }, "defaultRotation": 0,  "zIndex": 7 },
+    { "name": "upper_arm_l", "parent": "torso"      , "pivot": { "x": 0.604, "y": 0.030 }, "defaultOffset": { "x": -55.74,  "y": -150.395 }, "defaultRotation": 0,  "zIndex": 1 },
+    { "name": "upper_arm_r", "parent": "torso"      , "pivot": { "x": 0.604, "y": 0.030 }, "defaultOffset": { "x": -55.74,  "y": -150.395 }, "defaultRotation": 0,  "zIndex": 25 },
+    { "name": "upper_leg_l", "parent": "thigh_l"    , "pivot": { "x": 0.761, "y": 0.261 }, "defaultOffset": { "x": 9.63,    "y": 371      }, "defaultRotation": 22, "zIndex": 5 },
+    { "name": "upper_leg_r", "parent": "thigh_r"    , "pivot": { "x": 0.545, "y": 0.208 }, "defaultOffset": { "x": -10.513, "y": 365.65   }, "defaultRotation": 0,  "zIndex": 12 }
+  ]
+}

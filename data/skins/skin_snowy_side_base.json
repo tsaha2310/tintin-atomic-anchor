@@ -1,0 +1,25 @@
+{
+  "skinId": "skin_snowy_side_base",
+  "rigId": "snowy_side",
+  "mappings": {
+    "eye_l":         { "assetId": "ch_snowy_eye_l"        , "scale": 1, "zIndexOffset": 0 },
+    "eye_r":         { "assetId": "ch_snowy_eye_r"        , "scale": 1, "zIndexOffset": 0 },
+    "f_b_feet":      { "assetId": "ch_snowy_f_b_feet"     , "scale": 1, "zIndexOffset": 0 },
+    "f_b_leg_lower": { "assetId": "ch_snowy_f_b_leg_lower", "scale": 1, "zIndexOffset": 0 },
+    "f_b_leg_upper": { "assetId": "ch_snowy_f_b_leg_upper", "scale": 1, "zIndexOffset": 0 },
+    "f_f_feet":      { "assetId": "ch_snowy_f_f_feet"     , "scale": 1, "zIndexOffset": 0 },
+    "f_f_leg_lower": { "assetId": "ch_snowy_f_f_leg_lower", "scale": 1, "zIndexOffset": 0 },
+    "f_f_leg_upper": { "assetId": "ch_snowy_f_f_leg_upper", "scale": 1, "zIndexOffset": 0 },
+    "head":          { "assetId": "ch_snowy_head"         , "scale": 1, "zIndexOffset": 0 },
+    "mouth":         { "assetId": "ch_snowy_mouth"        , "scale": 1, "zIndexOffset": 0 },
+    "neck":          { "assetId": "ch_snowy_neck"         , "scale": 1, "zIndexOffset": 0 },
+    "r_b_feet":      { "assetId": "ch_snowy_r_b_feet"     , "scale": 1, "zIndexOffset": 0 },
+    "r_b_leg_lower": { "assetId": "ch_snowy_r_b_leg_lower", "scale": 1, "zIndexOffset": 0 },
+    "r_b_leg_upper": { "assetId": "ch_snowy_r_b_leg_upper", "scale": 1, "zIndexOffset": 0 },
+    "r_f_feet":      { "assetId": "ch_snowy_r_f_feet"     , "scale": 1, "zIndexOffset": 0 },
+    "r_f_leg_lower": { "assetId": "ch_snowy_r_f_leg_lower", "scale": 1, "zIndexOffset": 0 },
+    "r_f_leg_upper": { "assetId": "ch_snowy_r_f_leg_upper", "scale": 1, "zIndexOffset": 0 },
+    "tail":          { "assetId": "ch_snowy_tail"         , "scale": 1, "zIndexOffset": 0 },
+    "torso":         { "assetId": "ch_snowy_torso"        , "scale": 1, "zIndexOffset": 0 }
+  }
+}

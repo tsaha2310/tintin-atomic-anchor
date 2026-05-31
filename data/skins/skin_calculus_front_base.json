@@ -1,0 +1,24 @@
+{
+  "skinId": "custom_skin",
+  "rigId": "custom_rig",
+  "mappings": {
+    "arm_lower_l": { "assetId": "ch_calculus_arm_lower_l", "scale": 1, "zIndexOffset": 0 },
+    "arm_lower_r": { "assetId": "ch_calculus_arm_lower_r", "scale": 1, "zIndexOffset": 0 },
+    "arm_upper_l": { "assetId": "ch_calculus_arm_upper_l", "scale": 1, "zIndexOffset": 0 },
+    "arm_upper_r": { "assetId": "ch_calculus_arm_upper_r", "scale": 1, "zIndexOffset": 0 },
+    "boot_l":      { "assetId": "ch_calculus_boot_l"     , "scale": 1, "zIndexOffset": 0 },
+    "boot_r":      { "assetId": "ch_calculus_boot_r"     , "scale": 1, "zIndexOffset": 0 },
+    "eye_l":       { "assetId": "ch_calculus_eye_l"      , "scale": 1, "zIndexOffset": 0 },
+    "eye_r":       { "assetId": "ch_calculus_eye_r"      , "scale": 1, "zIndexOffset": 0 },
+    "hand_l":      { "assetId": "ch_calculus_hand_l"     , "scale": 1, "zIndexOffset": 0 },
+    "hand_r":      { "assetId": "ch_calculus_hand_r"     , "scale": 1, "zIndexOffset": 0 },
+    "hat":         { "assetId": "ch_calculus_hat"        , "scale": 1, "zIndexOffset": 0 },
+    "head":        { "assetId": "ch_calculus_head"       , "scale": 1, "zIndexOffset": 0 },
+    "leg_lower_l": { "assetId": "ch_calculus_leg_lower_l", "scale": 1, "zIndexOffset": 0 },
+    "leg_lower_r": { "assetId": "ch_calculus_leg_lower_r", "scale": 1, "zIndexOffset": 0 },
+    "leg_upper_l": { "assetId": "ch_calculus_leg_upper_l", "scale": 1, "zIndexOffset": 0 },
+    "leg_upper_r": { "assetId": "ch_calculus_leg_upper_r", "scale": 1, "zIndexOffset": 0 },
+    "mouth":       { "assetId": "ch_calculus_mouth"      , "scale": 1, "zIndexOffset": 0 },
+    "torso":       { "assetId": "ch_calculus_torso"      , "scale": 1, "zIndexOffset": 0 }
+  }
+}

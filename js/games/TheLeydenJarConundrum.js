@@ -9,6 +9,7 @@ import { SkeletonRig } from '../core/SkeletonRig.js';
 import { AnimationController } from '../core/AnimationController.js';
 import { StateMachine } from '../core/StateMachine.js';
 import { PolygonNavSystem } from '../components/PolygonNavSystem.js';
+import { QuizOverlay } from '../components/QuizOverlay.js';
 
 const bridgeStartX = 2450;
 const bridgeEndX = 3000; 
@@ -387,6 +388,10 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
         this.enableSmartRendering = true;
         this.phase = 'SCAVENGE'; 
         this.combineTarget = null; 
+
+        this.lastActionTime = Date.now();
+        this.idleHintCount = 0;
+        this.quizUI = new QuizOverlay(this.uiRoot, this.assetManager);
         
         this.environmentItems = []; 
         this.activeParticles = []; 
@@ -615,7 +620,7 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
         this.pithBallState = 'g15_test_ball_neutral'; 
 
         const assetsToLoad = [
-            'g15_bg_panorama',
+            'g15_bg_panorama', 'ui_journal_bg',
             
             // Rigs
             'rig_tintin_side', 'rig_haddock_front', 'rig_calculus_front', 'rig_snowy_side', 'rig_thomson_front',
@@ -895,9 +900,77 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
                 background: #f39c12; 
             }
 
-            /* --- RESPONSIVE MOBILE FIXES --- */
+            /* --- CELEBRATION BANNER --- */
+            .celebration-banner {
+                /* Changed to translate3d for hardware acceleration */
+                position: absolute; top: 30%; left: 50%; transform: translate3d(-50%, -50%, 0) scale(0);
+                background: linear-gradient(135deg, #f1c40f, #d35400);
+                color: #fff; font-family: 'Courier New', Courier, monospace; font-size: clamp(1.8rem, 5vw, 3rem); 
+                font-weight: 900; padding: 20px 40px; border-radius: 12px; border: 4px dashed #fff;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 0 0 15px rgba(255,255,255,0.3); 
+                text-align: center; z-index: 1000; text-shadow: 3px 3px 0 #8b4513;
+                animation: bannerPop 3.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+                pointer-events: none; width: max-content; max-width: 90%;
+                /* NEW: Anti-aliasing and blur-prevention properties */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                backface-visibility: hidden;
+                will-change: transform, opacity;
+            }
+            @keyframes bannerPop {
+                0% { transform: translate3d(-50%, -50%, 0) scale(0) rotate(-10deg); opacity: 0; }
+                10% { transform: translate3d(-50%, -50%, 0) scale(1.1) rotate(5deg); opacity: 1; }
+                20% { transform: translate3d(-50%, -50%, 0) scale(1) rotate(0deg); opacity: 1; }
+                85% { transform: translate3d(-50%, -50%, 0) scale(1) rotate(0deg); opacity: 1; }
+                100% { transform: translate3d(-50%, -50%, 0) scale(1.2) rotate(-5deg); opacity: 0; filter: blur(4px); }
+            }
+
+            .quiz-header {
+                padding-top: 40px;
+                color: #226622 !important;
+            }
+
+            /* --- MOBILE PORTRAIT QUIZ FIX --- */
+            @media (max-width: 768px) and (orientation: portrait) {
+                .quiz-header { padding-top: 70px; }
+            }
+
+            /* --- MOBILE LANDSCAPE QUIZ FIX --- */
+            @media (max-height: 500px) and (orientation: landscape) {
+                .quiz-overlay-container {
+                    top: 50% !important;
+                    transform: translate(-50%, -50%) !important;
+                    height: 95vh !important; 
+                    width: 80vw !important; 
+                    max-width: 600px !important; 
+                    display: flex !important;
+                    flex-direction: column;
+                }
+                .quiz-overlay-themed {
+                    padding-top: 55px !important; /* Adjusted for squished landscape spiral */
+                    padding-left: 30px !important;
+                    padding-right: 30px !important;
+                    padding-bottom: 10px !important; /* Reduced to maximize bottom screen real estate */
+                }
+                .quiz-scroll-wrapper {
+                    padding: 2px 5px; /* Tighter padding to fit all buttons */
+                }
+                .quiz-header {
+                    font-size: 1.1rem !important;
+                    margin-bottom: 6px !important;
+                }
+                .quiz-choice-btn {
+                    padding: 8px !important;
+                    font-size: 0.85rem !important;
+                    line-height: 1.2 !important;
+                    min-height: 35px;
+                }
+            }
+
+            /* --- OTHER RESPONSIVE MOBILE FIXES --- */
             @media (max-width: 768px) and (orientation: portrait) {
                 .inv-slot { width: 64px; height: 64px; }
+
             }
 
             /* ===== RESPONSIVE TWEAKS ===== */
@@ -1160,6 +1233,9 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
     }
 
     onPointerDown(e) {
+        // Reset idle timer on any click
+        this.lastActionTime = Date.now();
+
         if (this.dialogueCloseHandler || this.inputLocked) return; 
 
         // 1. UI LAYER CHECK (Screen Space)
@@ -1262,6 +1338,13 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
     }
 
     idleStatePeriodicActions() {
+        const timeSinceLastAction = Date.now() - this.lastActionTime;
+        // Trigger if idle for 15 seconds, and no dialogue/cutscene is currently happening
+        if (timeSinceLastAction > 15000 && !this.dialogueShowing && !this.inputLocked) {
+            this.triggerIdleHint();
+            this.lastActionTime = Date.now(); // Reset to prevent spamming
+        }
+
         const haddockSm = this.actors.haddock.sm;
         const haddockAnim = this.actors.haddock.anim;
 
@@ -1314,6 +1397,27 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
                 calculusSm.dispatch('PLAY_IDLE');
             }
         }
+    }
+
+    triggerIdleHint() {
+        const hints = [
+            "Tintin: 'I should probably click somewhere on the ground if I want to walk over there.'",
+            "Calculus: 'Remember, my boy! The USE verb requires TWO steps! First, click the item you want to use, then click your target!'",
+            "Haddock: 'Thundering typhoons! Are we just going to stand here all day? Combine something in your inventory!'",
+            "Thomson: 'To be perfectly frank, standing perfectly still is highly suspicious behavior.'",
+            "Snowy: *Woof!* (If you're stuck, try talking to everyone again!)"
+        ];
+        
+        const hint = hints[this.idleHintCount % hints.length];
+        
+        // Dynamically assign the speaker based on the text string
+        let speaker = "tintin";
+        if (hint.includes("Calculus")) speaker = "calculus";
+        if (hint.includes("Haddock")) speaker = "haddock";
+        if (hint.includes("Thomson")) speaker = "thomson";
+
+        this.showDialogue(hint, speaker, { "hideAfter": 4500 });
+        this.idleHintCount++;
     }
 
     handleVerbAction(verb, item) {
@@ -2212,7 +2316,11 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
                     tintin.isMoving = false; 
                     tintin.path = null;
                     tintin.sm.dispatch('STOP_WALK');
-                    this.win();
+                    this.triggerCelebration();
+                    this.showDialogue("'By Jove, you've done it! The bridge is neutralized! Now, let's review our findings in the field journal!'", "calculus", { 
+                        "hideAfter": 4000,
+                        "onClose": () => this.startQuiz()
+                    });
                 }
             }
         }, 1000 / 30);
@@ -2300,6 +2408,37 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
                 }, 1200);
             }
         }, 1000 / 30);
+    }
+
+    triggerCelebration() {
+        this.triggerHaptic(1000);
+
+        // Humorous Celebratory Banner
+        const banner = document.createElement('div');
+        banner.className = 'celebration-banner';
+        banner.innerHTML = "⚡ SUCCESS! ⚡";
+        this.uiRoot.appendChild(banner);
+        
+        // Clean up the banner after the animation finishes
+        setTimeout(() => {
+            if (banner) banner.remove();
+        }, 3600);
+
+        // Grand Particle Burst
+        for (let i = 0; i < 60; i++) {
+            this.spawnParticles('g15_vfx_spark_blue',
+                this.actors.tintin.x + (Math.random() - 0.5) * 80,
+                this.actors.tintin.y - 120 + (Math.random() - 0.5) * 80,
+                Math.random() * 0.5 + 0.2, // Size variance
+                2.0, // Longer life for celebration
+                {
+                    vx: (Math.random() - 0.5) * 1000, // Massive horizontal explosion
+                    vy: (Math.random() - 1.0) * 800,  // Shoot upwards
+                    gravity: 400,
+                    vrot: (Math.random() - 0.5) * 30
+                }
+            );
+        }
     }
 
     triggerEatAnimation() {
@@ -2677,11 +2816,92 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
     }
 
     // ==========================================
+    // QUIZ
+    // ==========================================
+
+    startQuiz() {
+        if (this.canvas) this.canvas.style.cursor = 'default';
+        this.inputLocked = true;
+        
+        // Freeze the game engine loop
+        this.phase = 'QUIZ'; 
+
+        const verbBank = document.querySelector('.verb-bank');
+        const invGrid = document.querySelector('.inventory-grid');
+        const skipBtn = document.querySelector('.secondary-btn');
+        if (verbBank) verbBank.style.setProperty('display', 'none', 'important');
+        if (invGrid) invGrid.style.setProperty('display', 'none', 'important');
+        if (skipBtn) skipBtn.style.setProperty('display', 'none', 'important');
+
+        this.triggerRefresh(); // Force the black canvas clear
+        
+        // Grab questions from the loaded tuning data
+        const questions = this.tuning.questions || [];
+        if (questions.length > 0) {
+            this.runQuizSequence(questions, 0);
+        } else {
+            this.win(); // Fallback if missing
+        }
+    }
+
+    runQuizSequence(questions, qIndex) {
+        if (qIndex >= questions.length) {
+            this.win();
+            return;
+        }
+
+        const qData = questions[qIndex];
+        const mappedOptions = qData.options.map(opt => ({
+            text: opt.label,
+            correct: (opt.id === qData.correctAnswerId),
+            onSelect: (isCorrect) => {
+                if (isCorrect) {
+                    this.triggerHaptic(20);
+                    this.runQuizSequence(questions, qIndex + 1);
+                } else {
+                    this.triggerHaptic(50);
+                }
+            }
+        }));
+
+        const bgImgAsset = this.assetManager.get('ui_journal_bg');
+
+        // Launch the UI, using keepOpenOnWrong for educational retries
+        this.quizUI.show(mappedOptions, bgImgAsset?.src, { keepOpenOnWrong: true });
+
+        // Mobile Landscape Scroll Fix
+        if (this.quizUI.overlayElement) {
+            // 1. Create the scrolling container
+            const scrollWrapper = document.createElement('div');
+            scrollWrapper.className = 'quiz-scroll-wrapper';
+
+            // 2. Move all the dynamically generated buttons into our scroll wrapper
+            while (this.quizUI.overlayElement.firstChild) {
+                scrollWrapper.appendChild(this.quizUI.overlayElement.firstChild);
+            }
+
+            // 3. Create and prepend the Title Header
+            const qTitle = document.createElement('h2');
+            qTitle.innerText = qData.text;
+            qTitle.className = 'quiz-header';
+            scrollWrapper.insertBefore(qTitle, scrollWrapper.firstChild);
+
+            // 4. Re-attach the wrapped content to the main overlay
+            this.quizUI.overlayElement.appendChild(scrollWrapper);
+        }
+    }
+          
+
+    // ==========================================
     // RENDER LOOP & CLEANUP
     // ==========================================
 
     update(dt) {
         this.handleItemCursorHover(dt);
+
+        // If the quiz is active, completely halt the game loop!
+        // No character updates, no physics, no rendering redraws.
+        if (this.phase === 'QUIZ') return;
 
         let needsRedraw = false;
         
@@ -2806,6 +3026,15 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
 
 
     draw(ctx) {
+        // Clear screen to black during the quiz
+        if (this.phase === 'QUIZ') {
+            // Reset any transforms just in case, then paint black
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            return; // Exit immediately so nothing else draws!
+        }
+
         ctx.save();
 
         // Translate the canvas context by both X and Y camera offsets
@@ -2962,6 +3191,14 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
     }
 
     destroy() {
+        // Restore the Engine UI Elements
+        const verbBank = document.querySelector('.verb-bank');
+        const invGrid = document.querySelector('.inventory-grid');
+        const skipBtn = document.querySelector('.secondary-btn');
+        if (verbBank) verbBank.style.removeProperty('display');
+        if (invGrid) invGrid.style.removeProperty('display');
+        if (skipBtn) skipBtn.style.removeProperty('display');
+
         // 1. Clean up DOM Elements
         if (this.styleElement) this.styleElement.remove();
         
@@ -2990,6 +3227,9 @@ export class TheLeydenJarConundrum extends PacAdventureGame {
         this.obstacles = [];
         this.environmentItems = [];
         this.actors = {}; 
+
+        // Cleanup Quiz UI
+        if (this.quizUI) this.quizUI.remove();
 
         // 5. Fire parent cleanup
         super.destroy();

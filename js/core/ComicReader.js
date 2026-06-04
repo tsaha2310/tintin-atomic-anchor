@@ -388,7 +388,8 @@ export class ComicReader {
         const page = this.manifest.pages[this.currentPageIndex];
         if (this.currentPanelIndex > -1) {
             const currentPanel = page.panels[this.currentPanelIndex];
-            if (currentPanel.gameConfig && 
+            if (currentPanel &&
+                currentPanel.gameConfig && 
                 currentPanel.gameConfig.type === 'post_read' && 
                 !currentPanel.gamePlayed && 
                 !this.isLocked) {

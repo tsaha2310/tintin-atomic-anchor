@@ -670,7 +670,109 @@
                     "desc": "A chart showing the Triboelectric Series. Teflon is extremely negative, human hair is extremely positive.",
                     "assetId": "g15_ui_slot_empty" 
                 }
-            }
+            },
+            "questions": [
+                {
+                    "id": "q1_friction",
+                    "text": "1. When Tintin rubbed the Teflon pan against Captain Haddock's beard, what actually caused the static charge to build up?",
+                    "correctAnswerId": "opt3",
+                    "options": [
+                        { "id": "opt1", "label": "The heat from the friction created new electrons out of thin air." },
+                        { "id": "opt2", "label": "The pan crushed the beard hair, releasing electrical juice." },
+                        { "id": "opt3", "label": "The friction ripped negatively charged electrons off the hair and transferred them to the pan." }
+                    ]
+                },
+                {
+                    "id": "q2_tribo",
+                    "text": "2. According to Professor Calculus's Triboelectric Series, why was the Teflon/Beard combination so powerful?",
+                    "correctAnswerId": "opt1",
+                    "options": [
+                        { "id": "opt1", "label": "They are at extreme opposite ends of the series; Hair loves to lose electrons, and Teflon loves to steal them." },
+                        { "id": "opt2", "label": "They are right next to each other on the series, making the transfer faster." },
+                        { "id": "opt3", "label": "Teflon is heavy and the beard is light." }
+                    ]
+                },
+                {
+                    "id": "q3_leyden_glass",
+                    "text": "3. The Leyden Jar uses a glass bottle. In the world of electricity, what is the scientific purpose of the glass?",
+                    "correctAnswerId": "opt2",
+                    "options": [
+                        { "id": "opt1", "label": "It acts as a Conductor to help the electricity flow." },
+                        { "id": "opt2", "label": "It acts as a Dielectric (Insulator) to keep the inner and outer charges separated." },
+                        { "id": "opt3", "label": "It generates positive ions when exposed to sunlight." }
+                    ]
+                },
+                {
+                    "id": "q4_leyden_conductor",
+                    "text": "4. We filled the bottle with salty river water and wrapped the outside in metal foil. Why?",
+                    "correctAnswerId": "opt1",
+                    "options": [
+                        { "id": "opt1", "label": "Salty water and metal are Conductors, allowing electrons to spread out and store along the glass walls." },
+                        { "id": "opt2", "label": "Salty water prevents the glass from shattering under electrical pressure." },
+                        { "id": "opt3", "label": "The metal foil acts as a shield against magnetic fields." }
+                    ]
+                },
+                {
+                    "id": "q5_pith",
+                    "text": "5. When Tintin tested the charged pan on the Pith Ball station, the ball violently pushed away. Why?",
+                    "correctAnswerId": "opt3",
+                    "options": [
+                        { "id": "opt1", "label": "Because gravity was reversed by the static field." },
+                        { "id": "opt2", "label": "Because the pan was positive and the ball was negative." },
+                        { "id": "opt3", "label": "Like charges repel! The pan forced electrons onto the ball, making them both Negative." }
+                    ]
+                },
+                {
+                    "id": "q6_mixing",
+                    "text": "6. What would have happened if Tintin put a Positive charge (from the silk) into a Leyden jar that was already holding Negative electrons?",
+                    "correctAnswerId": "opt2",
+                    "options": [
+                        { "id": "opt1", "label": "The jar's power would have doubled." },
+                        { "id": "opt2", "label": "The charges would have neutralized each other, leaving the jar empty of stored energy." },
+                        { "id": "opt3", "label": "The jar would have become highly magnetic." }
+                    ]
+                },
+                {
+                    "id": "q7_grounding",
+                    "text": "7. Tintin attached a copper wire from the charged jar to his belt. What is this process called?",
+                    "correctAnswerId": "opt1",
+                    "options": [
+                        { "id": "opt1", "label": "Grounding. It allows the massive stored charge to flow into him, creating a protective field." },
+                        { "id": "opt2", "label": "Insulating. It stops the electricity from leaking out of the jar." },
+                        { "id": "opt3", "label": "Friction. The wire rubs against his belt to generate more power." }
+                    ]
+                },
+                {
+                    "id": "q8_bridge_trap",
+                    "text": "8. The bridge was heavily guarded by a Positive electrostatic trap. Why did Tintin need a massive Negative charge to cross it safely?",
+                    "correctAnswerId": "opt3",
+                    "options": [
+                        { "id": "opt1", "label": "Because Negative charges are heavier and weighed him down against the wind." },
+                        { "id": "opt2", "label": "Because Negative repels Positive, pushing the trap away." },
+                        { "id": "opt3", "label": "Opposites attract and neutralize! His negative field perfectly cancelled out the positive trap." }
+                    ]
+                },
+                {
+                    "id": "q9_conservation",
+                    "text": "9. Did the Leyden Jar 'create' electricity out of nothing?",
+                    "correctAnswerId": "opt1",
+                    "options": [
+                        { "id": "opt1", "label": "No. It simply collected and stored electrons that were already there, moving them from the Captain to the jar." },
+                        { "id": "opt2", "label": "Yes. The combination of glass and foil creates new electrons." },
+                        { "id": "opt3", "label": "No. It created protons instead." }
+                    ]
+                },
+                {
+                    "id": "q10_insulator_vs_conductor",
+                    "text": "10. To sum up our field notes: A material that easily allows electrons to flow is called a _____, while a material that traps them in place is an _____.",
+                    "correctAnswerId": "opt2",
+                    "options": [
+                        { "id": "opt1", "label": "Insulator / Conductor" },
+                        { "id": "opt2", "label": "Conductor / Insulator" },
+                        { "id": "opt3", "label": "Capacitor / Electron" }
+                    ]
+                }
+            ]
         }
     },
     "snowy_runner": {

@@ -119,16 +119,6 @@
         ]
     },
     {
-        "trigger_panel_id": "233_4", 
-        "trigger_type": "post_read",
-        "sequence": [
-            { 
-                "moduleId": "snowy_runner", 
-                "levelId": "level_1_endless" 
-            }
-        ]
-    },
-    {
         "trigger_panel_id": "311_3", 
         "trigger_type": "post_read",
         "sequence": [
@@ -145,6 +135,16 @@
             { 
                 "moduleId": "the_leyden_jar_conundrum", 
                 "levelId": "level_1_bridge" 
+            }
+        ]
+    },
+    {
+        "trigger_panel_id": "324_3", 
+        "trigger_type": "post_read",
+        "sequence": [
+            { 
+                "moduleId": "snowy_runner", 
+                "levelId": "level_1_endless" 
             }
         ]
     }

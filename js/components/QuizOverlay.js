@@ -31,8 +31,8 @@ export class QuizOverlay {
 
         styleElement.innerHTML = `
             .quiz-overlay-container {
-                position: absolute; top: 55%; left: 50%;
-                transform: translate(-50%, 0);
+                position: absolute; top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
                 width: 600px; max-width: 90%; 
                 display: flex; flex-direction: column; gap: 12px;
                 z-index: 2000;
@@ -56,33 +56,41 @@ export class QuizOverlay {
             }
             
             .quiz-choice-btn:disabled {
-                background-color: #f8ecec;
-                color: #a05a5a;
-                border-color: #d0b0b0;
-                box-shadow: none;
-                transform: translateY(4px); 
-                opacity: 0.7;
-                cursor: default;
+                background-color: #f8ecec; color: #a05a5a; border-color: #d0b0b0;
+                box-shadow: none; transform: translateY(4px); opacity: 0.7; cursor: default;
             }
             
             .quiz-overlay-themed {
-                top: 50%; transform: translate(-50%, -50%); 
+                /* CRITICAL FIX: Forces padding to shrink inward rather than push the container off screen */
+                box-sizing: border-box !important; 
+                
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 background-position: center;
-                padding: 60px 40px; 
-                width: 500px; height: 600px; 
-                justify-content: center;
+                
+                /* Increased Base Desktop Clearances */
+                padding: 100px 40px 30px 40px; 
+                width: 550px; 
+                height: 700px; 
+                max-height: 90vh; 
+                justify-content: flex-start; /* Flow from top down */
             }
 
-            .quiz-overlay-locked .quiz-choice-btn {
-                pointer-events: none; 
+            .quiz-overlay-locked .quiz-choice-btn { pointer-events: none; }
+            .quiz-choice-btn.dimmed { opacity: 0.4; filter: grayscale(100%); }
+
+            /* --- GLOBAL SCROLL WRAPPER STYLES --- */
+            /* Centralized here so any game appending these classes inherits perfect flexbox scrolling */
+            .quiz-header {
+                color: #2c1e16 !important; text-align: center; font-family: 'Comic Sans MS', sans-serif;
+                margin-top: 0; margin-bottom: 12px; text-shadow: none !important; 
             }
-            
-            .quiz-choice-btn.dimmed {
-                opacity: 0.4;
-                filter: grayscale(100%);
+            .quiz-scroll-wrapper {
+                flex: 1 1 auto; min-height: 0; max-height: 100%; 
+                overflow-y: auto; padding: 5px; display: flex; flex-direction: column; gap: 8px;
+                -ms-overflow-style: none; scrollbar-width: none;
             }
+            .quiz-scroll-wrapper::-webkit-scrollbar { display: none; }
 
             /* --- BUTTON ANIMATIONS --- */
             @keyframes comicPopCorrect {
@@ -92,7 +100,6 @@ export class QuizOverlay {
                 70%  { transform: scale(1.05) rotate(-1deg); background-color: #2ecc71; border-color: #1a1a1a; box-shadow: 4px 4px 0 rgba(0,0,0,0.3); color: #fff; font-weight: bold; }
                 100% { transform: scale(1.05); background-color: #2ecc71; border-color: #1a1a1a; box-shadow: 4px 4px 0 rgba(0,0,0,0.3); color: #fff; font-weight: bold; }
             }
-
             .anim-correct { animation: comicPopCorrect 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; z-index: 10; position: relative; }
 
             @keyframes comicShakeWrong {
@@ -100,20 +107,12 @@ export class QuizOverlay {
                 20%, 60% { transform: translateX(-6px); background-color: #e74c3c; color: white; border-color: #1a1a1a; }
                 40%, 80% { transform: translateX(6px); background-color: #e74c3c; color: white; border-color: #1a1a1a; }
             }
-
             .anim-wrong { animation: comicShakeWrong 0.5s ease-in-out forwards; }
 
             /* --- CHARACTER FEEDBACK ANIMATIONS --- */
             .character-feedback {
-                position: absolute;
-                bottom: -30px;
-                right: -60px;
-                width: 160px;
-                height: auto;
-                z-index: 2005; 
-                pointer-events: none;
-                opacity: 0;
-                transform-origin: bottom center;
+                position: absolute; bottom: -30px; right: -60px; width: 160px; height: auto;
+                z-index: 2005; pointer-events: none; opacity: 0; transform-origin: bottom center;
                 filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.3)) drop-shadow(0 0 15px rgba(255,255,255,0.9));
             }
 
@@ -134,26 +133,11 @@ export class QuizOverlay {
             .anim-character-correct { animation: characterPopIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
             .anim-character-wrong { animation: characterShakeIn 0.5s ease-out forwards; }
 
-            /* --- BIGGER, LONGER CONFETTI ANIMATIONS --- */
-            .confetti-container {
-                position: absolute;
-                bottom: 40px; 
-                right: -10px;
-                width: 1px;
-                height: 1px;
-                z-index: 2010; /* Above Snowy */
-                pointer-events: none;
-                overflow: visible;
-            }
-            
+            /* --- BIGGER CONFETTI ANIMATIONS --- */
+            .confetti-container { position: absolute; bottom: 40px; right: -10px; width: 1px; height: 1px; z-index: 2010; pointer-events: none; overflow: visible; }
             .confetti-particle {
-                position: absolute;
-                top: 0; left: 0;
-                width: 14px; height: 14px; /* Increased Size */
-                margin: -7px 0 0 -7px; /* Perfect center */
-                border: 2px solid #1a1a1a; 
-                border-radius: 2px;
-                /* Increased Duration to 1.5s */
+                position: absolute; top: 0; left: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; 
+                border: 2px solid #1a1a1a; border-radius: 2px;
                 animation: confettiBurst 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
             }
 
@@ -163,32 +147,57 @@ export class QuizOverlay {
                 100% { transform: translate(var(--tx), var(--ty)) scale(0) rotate(var(--rot)); opacity: 0; }
             }
 
-            @media (max-width: 600px) {
-                .quiz-overlay-container:not(.quiz-overlay-themed) { top: 45%; width: 95%; gap: 8px; }
-                .quiz-choice-btn { padding: 12px; font-size: 16px; }
+            /* --- MOBILE PORTRAIT (Stretches vertically to use black space) --- */
+            @media (max-width: 768px) and (orientation: portrait) {
+                .quiz-overlay-container:not(.quiz-overlay-themed) { width: 95%; gap: 8px; }
+                
+                .quiz-overlay-themed {
+                    width: 92vw !important;
+                    height: 90vh !important; /* Force taller container */
+                    max-height: 850px !important;
+                    padding-top: 80px !important; /* Spiral clearance */
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                    padding-bottom: 25px !important;
+                }
+                .quiz-choice-btn {
+                    padding: 12px !important; 
+                    font-size: 14px !important; /* Slightly larger text */
+                    margin: 4px 0 !important;
+                    min-height: 44px; /* Easier to tap */
+                }
+                .quiz-header { font-size: 1.2rem !important; margin-bottom: 10px !important; }
                 .character-feedback { width: 120px; right: -10px; bottom: -20px; }
                 .confetti-container { right: 20px; bottom: 30px; }
             }
 
-            @media (max-height: 600px) and (orientation: landscape) {
-                .quiz-overlay-themed { height: 95vh; width: 79vh; padding: 8vh 6vh; gap: 6px; }
-                .quiz-choice-btn { padding: 8px 12px; font-size: 13px; }
-                .character-feedback { width: 100px; right: -20px; bottom: -10px; }
+            /* --- MOBILE LANDSCAPE (Stretches horizontally to fit text lines) --- */
+            @media (max-height: 500px) and (orientation: landscape) {
+                .quiz-overlay-themed { 
+                    height: 96vh !important; 
+                    width: 85vw !important; /* Wider to prevent text wrapping */
+                    max-width: 700px !important;
+                    padding-top: 45px !important; /* Spiral is squished */
+                    padding-left: 25px !important;
+                    padding-right: 25px !important;
+                    padding-bottom: 10px !important; 
+                    gap: 6px !important;
+                }
+                .quiz-choice-btn { 
+                    padding: 6px 12px !important; 
+                    font-size: 12px !important; 
+                    margin: 3px 0 !important; 
+                    line-height: 1.1 !important;
+                    min-height: 32px !important;
+                }
+                .quiz-overlay-themed h2, .quiz-header { 
+                    font-size: 14px !important; 
+                    padding: 4px !important; 
+                    margin-bottom: 4px !important; 
+                }
+                .character-feedback { width: 90px; right: -15px; bottom: -10px; }
                 .confetti-container { right: 0px; bottom: 20px; }
             }
-
-            /* --- MOBILE PORTRAIT (Scaled down maintaining exactly 1:1.2 ratio) --- */
-            @media (max-width: 768px) and (orientation: portrait) {
-                .quiz-overlay-themed h2 { font-size: 12px; padding: 10px; margin-bottom: 10px; }
-                .quiz-choice-btn { font-size: 12px !important; padding: 10px !important; margin: 4px 0 !important; }
-            }
-
-            /* --- MOBILE LANDSCAPE (Scaled down drastically to fit height) --- */
-            @media (max-height: 500px) and (orientation: landscape) {
-                .quiz-overlay-themed h2 { font-size: 12px; padding: 8px; margin-bottom: 8px; }
-                .quiz-choice-btn { font-size: 10px !important; padding: 6px !important; margin: 3px 0 !important; line-height: 1.1; }
-            }
-
         `;
     }
 
